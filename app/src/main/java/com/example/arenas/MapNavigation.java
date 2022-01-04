@@ -103,7 +103,7 @@ public class MapNavigation extends AppCompatActivity {
     private void showButton(Button button){
         ObjectAnimator fadeOut = ObjectAnimator.ofFloat(findViewById(button.getId()),"alpha",1f);
         fadeOut.setDuration(100);
-        fadeOut.setStartDelay(900);
+        fadeOut.setStartDelay(400);
         fadeOut.start();
         button.setEnabled(true);
     }
