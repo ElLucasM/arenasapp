@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Solar {
     @PrimaryKey
-    private int id;
+    public int id;
 
     @ColumnInfo(name = "price")
-    private int price;
+    public int price;
 
     @ColumnInfo(name = "area")
-    private int area;
+    public int area;
 }
