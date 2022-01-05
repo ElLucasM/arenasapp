@@ -10,24 +10,26 @@ import com.example.arenas.entities.Price;
 import com.example.arenas.entities.Solar;
 import com.example.arenas.entities.SolarPrice;
 
+import java.util.Date;
 import java.util.List;
 
 @Dao
-public interface SolarDAO {
+public interface PriceDAO {
     @Query("SELECT * FROM Solar WHERE id=:id")
     Solar findSolarById(int id);
 
-    @Insert
-    void insertSolar(Solar solar);
+
+    @Query("SELECT * FROM Solar")
+    List<Solar> getSolares();
+
+    @Query("SELECT * FROM Price")
+    List<Price> getPrices();
 
     @Insert
-    void newPrice(Price price);
+    public void insertPrecio(Price price);
 
-    @Transaction
-    @Query("select * from Solar where id=:id")
-    List<SolarPrice> getPrices(int id);
+    @Insert
+    void setSolar(Solar solar);
 
-    @Update
-    void updateSolar(Solar solar);
 
 }
