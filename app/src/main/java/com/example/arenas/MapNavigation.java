@@ -83,11 +83,246 @@ public class MapNavigation extends AppCompatActivity {
         buttonsolar1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int[] location = new int[2];
-                buttonsolar1.getLocationInWindow(location);
-                int x = location[0] + view.getWidth() / 2;
-                int y = location[1] + view.getHeight() / 2;
-                moveMap(x*-3.5f+2100,y*-3.5f+1300,3.5f);
+                moveMap(buttonsolar1, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar2, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar3, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+
+        buttonsolar4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar4, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar5, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar6, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar7, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar8, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar9, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar10, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar11, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar12, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar13, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar14, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar15, view);
                 hideButtons(buttons);
                 final FloatingActionButton back = findViewById(R.id.back);
                 back.setOnClickListener(new View.OnClickListener() {
@@ -104,11 +339,126 @@ public class MapNavigation extends AppCompatActivity {
         buttonsolar16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int[] location = new int[2];
-                buttonsolar16.getLocationInWindow(location);
-                int x = location[0] + view.getWidth() / 2;
-                int y = location[1] + view.getHeight() / 2;
-                moveMap(x*-3.5f+2100,y*-3.5f+1300,3.5f);
+                moveMap(buttonsolar16, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar16, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar17, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar18, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar19, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar20, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar21, view);
+                hideButtons(buttons);
+                final FloatingActionButton back = findViewById(R.id.back);
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        resetMap();
+                        showButtons(buttons);
+                        setBackAsBack();
+                    }
+                });
+            }
+        });
+
+        buttonsolar22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveMap(buttonsolar22, view);
                 hideButtons(buttons);
                 final FloatingActionButton back = findViewById(R.id.back);
                 back.setOnClickListener(new View.OnClickListener() {
@@ -123,13 +473,16 @@ public class MapNavigation extends AppCompatActivity {
         });
 
 
-
-
-
-
     }
 
-    private void moveMap(float newX, float newY, float newScale){
+    private void moveMap(Button button, View view){
+        int[] location = new int[2];
+        button.getLocationInWindow(location);
+        int x = location[0] + view.getWidth() / 2;
+        int y = location[1] + view.getHeight() / 2;
+        float newScale = 3.5f;
+        float newX = x*-3.5f+2100;
+        float newY = y*-3.5f+1300;
         ObjectAnimator setTerreno0X = ObjectAnimator.ofFloat(findViewById(R.id.map), "translationX", newX);
         setTerreno0X.setDuration(500);
         ObjectAnimator setTerreno0Y = ObjectAnimator.ofFloat(findViewById(R.id.map), "translationY", newY);

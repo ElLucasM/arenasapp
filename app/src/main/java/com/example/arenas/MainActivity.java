@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
             System.out.println(sp.solar.id);
         }
-        db.newPrice(solar,1300);
+        //db.newPrice(solar,1300);
         solarPrice = db.solarDAO().getPrices(13);
         //System.out.println(db.solarDAO().getPrices().get(2).prices.get(0).date);
     }
