@@ -19,9 +19,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.arenas.entities.Price;
 import com.example.arenas.entities.Solar;
+import com.example.arenas.entities.SolarPrice;
 import com.example.arenas.persistence.ArenasDatabase;
 
+import java.util.List;
 import java.util.Locale;
 
 public class SolarInfoActivity extends AppCompatActivity {
@@ -32,6 +35,8 @@ public class SolarInfoActivity extends AppCompatActivity {
     private Solar selectedSolar;
     private ArenasDatabase db;
     private EditText priceField;
+    private Button priceAccept;
+    private Button priceCancel;
 
 
     @Override
@@ -41,6 +46,7 @@ public class SolarInfoActivity extends AppCompatActivity {
 
         selectedSolar = AdminActivity.selectedSolar;
         db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        List<SolarPrice> solarPrices = db.solarDAO().getPrices(selectedSolar.id);
 
         final TextView solarID = findViewById(R.id.solarID);
         solarID.setText(String.format("Solar #%d", selectedSolar.id));
@@ -59,6 +65,14 @@ public class SolarInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 priceDialog();
+            }
+        });
+
+        final Button priceEvo = findViewById(R.id.priceEvo);
+        priceEvo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PriceGraphDialog.showPriceGraph(SolarInfoActivity.this,SolarInfoActivity.this,selectedSolar, solarPrices.get(0).prices);
             }
         });
     }
@@ -123,6 +137,9 @@ public class SolarInfoActivity extends AppCompatActivity {
         final View pricePopupView = getLayoutInflater().inflate(R.layout.price_mod_popup, null);
         dialogBuilder.setView(pricePopupView);
 
+        priceAccept = pricePopupView.findViewById(R.id.priceAccept);
+        priceCancel = pricePopupView.findViewById(R.id.priceCancel);
+
         priceField = (EditText) pricePopupView.findViewById(R.id.priceField);
         priceField.setText(String.valueOf(selectedSolar.price));
         final TextView variation = (TextView) pricePopupView.findViewById(R.id.variation);
@@ -134,16 +151,19 @@ public class SolarInfoActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!priceField.getText().toString().equals("") && !priceField.getText().toString().equals("0")) {
+                if(!priceField.getText().toString().equals("") && Integer.valueOf(priceField.getText().toString())!=0) {
+                    priceAccept.setEnabled(true);
                     double var = ((Double.valueOf(priceField.getText().toString()) / selectedSolar.price) - 1) * 100;
                     variation.setText(String.format("%.2f", var) + "%");
                     if(var > 0){
-                        variation.setTextColor(Color.GREEN);
+                        variation.setTextColor(Color.argb(255,51, 102, 0));
                     } else if(var  == 0){
                         variation.setTextColor(Color.DKGRAY);
                     } else {
                         variation.setTextColor(Color.RED);
                     }
+                } else {
+                    priceAccept.setEnabled(false);
                 }
             }
 
@@ -153,8 +173,7 @@ public class SolarInfoActivity extends AppCompatActivity {
             }
         });
 
-        final Button priceAccept = pricePopupView.findViewById(R.id.priceAccept);
-        final Button priceCancel = pricePopupView.findViewById(R.id.priceCancel);
+
 
         priceAccept.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
