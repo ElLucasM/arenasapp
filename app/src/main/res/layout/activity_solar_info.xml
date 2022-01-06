@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="viewEnd"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen"
+    tools:context=".SolarInfoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="viewEnd"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".SolarInfoActivity">
+
+        <Button
+            android:id="@+id/priceEvo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/purple_500"
+            android:text="evolución de precio"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/solarInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/priceMod" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="date"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/phone"
+            app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+        <TextView
+            android:id="@+id/areaLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Superficie:"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="@+id/solarInfo"
+            app:layout_constraintHorizontal_bias="0.185"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/statusLabel" />
+
+        <TextView
+            android:id="@+id/priceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Precio:"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="@+id/areaLabel"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/areaLabel" />
+
+        <TextView
+            android:id="@+id/solarInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Información Solar"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23000002" />
+
+        <TextView
+            android:id="@+id/clientInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Información Cliente"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/solarInfo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/solarID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solar #"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.110000014" />
+
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Estado:"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="@+id/areaLabel"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/solarInfo" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="status"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/statusLabel"
+            app:layout_constraintTop_toTopOf="@+id/statusLabel" />
+
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="area"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/areaLabel"
+            app:layout_constraintTop_toTopOf="@+id/areaLabel" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="price"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/priceLabel"
+            app:layout_constraintTop_toTopOf="@+id/priceLabel" />
+
+        <TextView
+            android:id="@+id/clientPhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Teléfono"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="@+id/clientNameLabel2"
+            app:layout_constraintTop_toBottomOf="@+id/clientNameLabel2" />
+
+        <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="8dp"
+            android:text="Fecha:"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toStartOf="@+id/date"
+            app:layout_constraintTop_toBottomOf="@+id/clientNameLabel2" />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="phone"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/clientsName2"
+            app:layout_constraintTop_toBottomOf="@+id/clientsName2" />
+
+        <TextView
+            android:id="@+id/clientsName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="clientsName"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/clientNameLabel2"
+            app:layout_constraintTop_toTopOf="@+id/clientNameLabel2" />
+
+        <TextView
+            android:id="@+id/clientNameLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nombre:"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="@+id/clientInfo"
+            app:layout_constraintHorizontal_bias="0.279"
+            app:layout_constraintStart_toStartOf="@+id/clientInfo"
+            app:layout_constraintTop_toBottomOf="@+id/clientInfo" />
+
+        <Button
+            android:id="@+id/clientMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_light"
+            android:text="Agregar/Modificar cliente"
+            app:layout_constraintEnd_toEndOf="@+id/clientInfo"
+            app:layout_constraintStart_toStartOf="@+id/clientInfo"
+            app:layout_constraintTop_toTopOf="@+id/statusMod" />
+
+        <Button
+            android:id="@+id/statusMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="modificar estado"
+            app:layout_constraintEnd_toEndOf="@+id/solarInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/priceLabel" />
+
+        <Button
+            android:id="@+id/priceMod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/teal_700"
+            android:text="modificar precio"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/solarInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/solarInfo"
+            app:layout_constraintTop_toBottomOf="@+id/statusMod" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
