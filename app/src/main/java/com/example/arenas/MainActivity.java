@@ -25,30 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         final Button start = findViewById(R.id.start);
+        final Button admin = findViewById(R.id.admin);
         Intent i = new Intent(this, MapNavigation.class);
+        Intent adminIntent = new Intent(this, AdminActivity.class);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(i);
             }
         });
-        //db.insertSolar(13,"Disponible", 12000, 600);
-        Solar solar = db.solarDAO().findSolarById(13);
-        //Price price = db.priceDAO().getPrices().get(1);
-        //System.out.println(price.solarId);g
-        List<SolarPrice> solarPrice = db.solarDAO().getPrices(13);
-        for (SolarPrice sp: solarPrice) {
-            for (Price price : sp.prices){
-                System.out.println(price.price);
-                System.out.println(price.date);
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(adminIntent);
             }
-            System.out.println(sp.solar.id);
-        }
-        //db.newPrice(solar,1300);
-        solarPrice = db.solarDAO().getPrices(13);
-        //System.out.println(db.solarDAO().getPrices().get(2).prices.get(0).date);
+        });
     }
 
 
