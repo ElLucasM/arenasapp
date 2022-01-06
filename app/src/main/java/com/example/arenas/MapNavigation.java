@@ -7,6 +7,9 @@ import androidx.room.Room;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -89,54 +92,13 @@ public class MapNavigation extends AppCompatActivity {
         buttons[20] = buttonsolar21;
         buttons[21] = buttonsolar22;
 
-        final View solaroverlay1 = findViewById(R.id.solaroverlay1);
-        final View solaroverlay2 = findViewById(R.id.solaroverlay2);
-        final View solaroverlay3 = findViewById(R.id.solaroverlay3);
-        final View solaroverlay4 = findViewById(R.id.solaroverlay4);
-        final View solaroverlay5 = findViewById(R.id.solaroverlay5);
-        final View solaroverlay6 = findViewById(R.id.solaroverlay6);
-        final View solaroverlay7 = findViewById(R.id.solaroverlay7);
-        final View solaroverlay8 = findViewById(R.id.solaroverlay8);
-        final View solaroverlay9 = findViewById(R.id.solaroverlay9);
-        final View solaroverlay10 = findViewById(R.id.solaroverlay10);
-        final View solaroverlay11 = findViewById(R.id.solaroverlay11);
-        final View solaroverlay12 = findViewById(R.id.solaroverlay12);
-        final View solaroverlay13 = findViewById(R.id.solaroverlay13);
-        final View solaroverlay14 = findViewById(R.id.solaroverlay14);
-        final View solaroverlay15 = findViewById(R.id.solaroverlay15);
-        final View solaroverlay16 = findViewById(R.id.solaroverlay16);
-        final View solaroverlay17 = findViewById(R.id.solaroverlay17);
-        final View solaroverlay18 = findViewById(R.id.solaroverlay18);
-        final View solaroverlay19 = findViewById(R.id.solaroverlay19);
-        final View solaroverlay20 = findViewById(R.id.solaroverlay20);
-        final View solaroverlay21 = findViewById(R.id.solaroverlay21);
-        final View solaroverlay22 = findViewById(R.id.solaroverlay22);
-
-        final View[] solaroverlays = new View[22];
-        solaroverlays[0] = solaroverlay1;
-        solaroverlays[1] = solaroverlay2;
-        solaroverlays[2] = solaroverlay3;
-        solaroverlays[3] = solaroverlay4;
-        solaroverlays[4] = solaroverlay5;
-        solaroverlays[5] = solaroverlay6;
-        solaroverlays[6] = solaroverlay7;
-        solaroverlays[7] = solaroverlay8;
-        solaroverlays[8] = solaroverlay9;
-        solaroverlays[9] = solaroverlay10;
-        solaroverlays[10] = solaroverlay11;
-        solaroverlays[11] = solaroverlay12;
-        solaroverlays[12] = solaroverlay13;
-        solaroverlays[13] = solaroverlay14;
-        solaroverlays[14] = solaroverlay15;
-        solaroverlays[15] = solaroverlay16;
-        solaroverlays[16] = solaroverlay17;
-        solaroverlays[17] = solaroverlay18;
-        solaroverlays[18] = solaroverlay19;
-        solaroverlays[19] = solaroverlay20;
-        solaroverlays[20] = solaroverlay21;
-        solaroverlays[21] = solaroverlay22;
-
-
+        for (int i = 0;i < buttons.length;i++) {
+            String color = "#19000000";
+            if(true) {
+                color = "#19FB0404";
+            }
+            buttons[i].setForegroundTintList(ColorStateList.valueOf(Color.parseColor(color)));
+        }
 
         //SET EVENTO
         ObjectAnimator fadeInBack = ObjectAnimator.ofFloat(back, "translationX", 0f);
@@ -151,7 +113,7 @@ public class MapNavigation extends AppCompatActivity {
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    moveMap(buttons[finalI], view, back, buttons, solaroverlays);
+                    moveMap(buttons[finalI], view, back, buttons);
                     hideButtons(buttons);
                     solartitle.setText("SOLAR N# " + (finalI +1));
                     ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 0f);
@@ -166,11 +128,11 @@ public class MapNavigation extends AppCompatActivity {
 
     }
 
-    private void moveMap(Button button, View view, FloatingActionButton back, Button[] buttons, View[] overlays){
+    private void moveMap(Button button, View view, FloatingActionButton back, Button[] buttons){
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resetMap(overlays);
+                resetMap();
                 showButtons(buttons);
                 final ConstraintLayout solarinfo = findViewById(R.id.solarinfo);
                 ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 350f);
@@ -200,21 +162,6 @@ public class MapNavigation extends AppCompatActivity {
         ObjectAnimator setTerreno0Zy = ObjectAnimator.ofFloat(map_view, "scaleY", newScale);
         setTerreno0Zy.setDuration(500);
         arrayListObjectAnimators.add(setTerreno0Zy);
-        for(int i = 0;i < overlays.length;i++) {
-//            ObjectAnimator setOverlay0X = ObjectAnimator.ofFloat(overlays[i], "translationX", newX);
-//            setOverlay0X.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0X);
-//            ObjectAnimator setOverlay0Y = ObjectAnimator.ofFloat(overlays[i], "translationY", newY);
-//            setOverlay0Y.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Y);
-//            ObjectAnimator setOverlay0Zx = ObjectAnimator.ofFloat(overlays[i], "scaleX", newScale);
-//            setOverlay0Zx.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Zx);
-//            ObjectAnimator setOverlay0Zy = ObjectAnimator.ofFloat(overlays[i], "scaleY", newScale);
-//            setOverlay0Zy.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Zy);
-              overlays[i].setVisibility(View.INVISIBLE);
-        }
         AnimatorSet zoomInTerreno0 = new AnimatorSet();
         //zoomInTerreno0.playTogether(setTerreno0X,setTerreno0Y,setTerreno0Zx,setTerreno0Zy);
         ObjectAnimator[] objectAnimators = arrayListObjectAnimators.toArray(new ObjectAnimator[arrayListObjectAnimators.size()]);
@@ -222,7 +169,7 @@ public class MapNavigation extends AppCompatActivity {
         zoomInTerreno0.start();
     }
 
-    private void resetMap(View[] overlays){
+    private void resetMap(){
         View map_view = findViewById(R.id.map);
         ArrayList<ObjectAnimator> arrayListObjectAnimators = new ArrayList<ObjectAnimator>();
         ObjectAnimator setTerreno0X = ObjectAnimator.ofFloat(map_view, "translationX", 0f);
@@ -237,27 +184,6 @@ public class MapNavigation extends AppCompatActivity {
         ObjectAnimator setTerreno0Zy = ObjectAnimator.ofFloat(map_view, "scaleY", 1f);
         setTerreno0Zy.setDuration(500);
         arrayListObjectAnimators.add(setTerreno0Zy);
-        for(int i = 0;i < overlays.length;i++) {
-//            ObjectAnimator setOverlay0X = ObjectAnimator.ofFloat(overlays[i], "translationX", 0f);
-//            setOverlay0X.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0X);
-//            ObjectAnimator setOverlay0Y = ObjectAnimator.ofFloat(overlays[i], "translationY", 0f);
-//            setOverlay0Y.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Y);
-//            ObjectAnimator setOverlay0Zx = ObjectAnimator.ofFloat(overlays[i], "scaleX", 1f);
-//            setOverlay0Zx.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Zx);
-//            ObjectAnimator setOverlay0Zy = ObjectAnimator.ofFloat(overlays[i], "scaleY", 1f);
-//            setOverlay0Zy.setDuration(500);
-//            arrayListObjectAnimators.add(setOverlay0Zy);
-            Handler handler = new Handler();
-            int finalI = i;
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    overlays[finalI].setVisibility(View.VISIBLE);
-                }
-            }, 400);
-        }
         AnimatorSet zoomInTerreno0 = new AnimatorSet();
         //zoomInTerreno0.playTogether(setTerreno0X,setTerreno0Y,setTerreno0Zx,setTerreno0Zy);
         ObjectAnimator[] objectAnimators = arrayListObjectAnimators.toArray(new ObjectAnimator[arrayListObjectAnimators.size()]);

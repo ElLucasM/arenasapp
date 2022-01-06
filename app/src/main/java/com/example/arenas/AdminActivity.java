@@ -22,7 +22,11 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.admin_activity);
 
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
-        //db.solarDAO().insertSolar(new Solar(13,"libre",10000,500));
+        try {
+            db.solarDAO().insertSolar(new Solar(13, "libre", 10000, 500));
+        } catch(Exception e) {
+
+        }
         final Button test = findViewById(R.id.testButton);
         Intent i = new Intent(this, SolarInfoActivity.class);
         test.setOnClickListener(new View.OnClickListener() {
