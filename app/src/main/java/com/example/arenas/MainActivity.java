@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //db.insertSolar(13,"Disponible", 12000, 600);
         Solar solar = db.solarDAO().findSolarById(13);
         //Price price = db.priceDAO().getPrices().get(1);
-        //System.out.println(price.solarId);
+        //System.out.println(price.solarId);g
         List<SolarPrice> solarPrice = db.solarDAO().getPrices(13);
         for (SolarPrice sp: solarPrice) {
             for (Price price : sp.prices){
