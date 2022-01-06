@@ -716,6 +716,7 @@
         android:clickable="true"
         android:focusable="true"
         android:translationX="-250px"
+        app:borderWidth="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/abc_vector_test"

@@ -8,6 +8,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -212,7 +213,7 @@ public class MapNavigation extends AppCompatActivity {
 //            ObjectAnimator setOverlay0Zy = ObjectAnimator.ofFloat(overlays[i], "scaleY", newScale);
 //            setOverlay0Zy.setDuration(500);
 //            arrayListObjectAnimators.add(setOverlay0Zy);
-            overlays[i].setAlpha(0f);
+              overlays[i].setVisibility(View.INVISIBLE);
         }
         AnimatorSet zoomInTerreno0 = new AnimatorSet();
         //zoomInTerreno0.playTogether(setTerreno0X,setTerreno0Y,setTerreno0Zx,setTerreno0Zy);
@@ -249,7 +250,13 @@ public class MapNavigation extends AppCompatActivity {
 //            ObjectAnimator setOverlay0Zy = ObjectAnimator.ofFloat(overlays[i], "scaleY", 1f);
 //            setOverlay0Zy.setDuration(500);
 //            arrayListObjectAnimators.add(setOverlay0Zy);
-            overlays[i].setAlpha(0.1f);
+            Handler handler = new Handler();
+            int finalI = i;
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    overlays[finalI].setVisibility(View.VISIBLE);
+                }
+            }, 400);
         }
         AnimatorSet zoomInTerreno0 = new AnimatorSet();
         //zoomInTerreno0.playTogether(setTerreno0X,setTerreno0Y,setTerreno0Zx,setTerreno0Zy);
