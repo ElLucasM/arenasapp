@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
 @Entity
 public class Solar {
     @PrimaryKey
@@ -17,6 +19,15 @@ public class Solar {
 
     @ColumnInfo(name = "area")
     public int area;
+
+    @ColumnInfo(name = "buy_date")
+    public Date buyDate;
+
+    @ColumnInfo(name = "client_name")
+    public String clientName;
+
+    @ColumnInfo(name = "client_phone")
+    public String clientPhone;
 
     public Solar(){
 

@@ -1,15 +1,22 @@
 package com.example.arenas;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.accessibilityservice.GestureDescription;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.arenas.entities.Solar;
@@ -24,6 +31,7 @@ public class SolarInfoActivity extends AppCompatActivity {
     private Button libre, reservado, construido, comprado;
     private Solar selectedSolar;
     private ArenasDatabase db;
+    private EditText priceField;
 
 
     @Override
@@ -36,19 +44,21 @@ public class SolarInfoActivity extends AppCompatActivity {
 
         final TextView solarID = findViewById(R.id.solarID);
         solarID.setText(String.format("Solar #%d", selectedSolar.id));
-        final TextView status = findViewById(R.id.status);
-        final TextView area = findViewById(R.id.area);
-        final TextView price = findViewById(R.id.price);
-        status.setText(selectedSolar.status.toUpperCase(Locale.ROOT));
-        area.setText(String.format("%d m2",selectedSolar.area));
-        price.setText(String.format("%d U$S",selectedSolar.price));
+        dataLoad();
 
         final Button statusMod = findViewById(R.id.statusMod);
         statusMod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 statusDialog();
+            }
+        });
 
+        final Button priceMod = findViewById(R.id.priceMod);
+        priceMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                priceDialog();
             }
         });
     }
@@ -103,8 +113,71 @@ public class SolarInfoActivity extends AppCompatActivity {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
                 db.solarDAO().updateSolar(selectedSolar);
+                dataLoad();
             }
         });
+    }
+
+    private void priceDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View pricePopupView = getLayoutInflater().inflate(R.layout.price_mod_popup, null);
+        dialogBuilder.setView(pricePopupView);
+
+        priceField = (EditText) pricePopupView.findViewById(R.id.priceField);
+        priceField.setText(String.valueOf(selectedSolar.price));
+        final TextView variation = (TextView) pricePopupView.findViewById(R.id.variation);
+        priceField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!priceField.getText().toString().equals("") && !priceField.getText().toString().equals("0")) {
+                    double var = ((Double.valueOf(priceField.getText().toString()) / selectedSolar.price) - 1) * 100;
+                    variation.setText(String.format("%.2f", var) + "%");
+                    if(var > 0){
+                        variation.setTextColor(Color.GREEN);
+                    } else if(var  == 0){
+                        variation.setTextColor(Color.DKGRAY);
+                    } else {
+                        variation.setTextColor(Color.RED);
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        final Button priceAccept = pricePopupView.findViewById(R.id.priceAccept);
+        final Button priceCancel = pricePopupView.findViewById(R.id.priceCancel);
+
+        priceAccept.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                db.newPrice(selectedSolar, Integer.valueOf(priceField.getText().toString()));
+                alertDialog.cancel();
+                dataLoad();
+            }
+        });
+
+        priceCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.cancel();
+                dataLoad();
+            }
+        });
+
+        alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+
     }
 
     private void buttonsColor(String status){
@@ -153,4 +226,12 @@ public class SolarInfoActivity extends AppCompatActivity {
         }
     }
 
+    private void dataLoad(){
+        final TextView status = findViewById(R.id.status);
+        final TextView area = findViewById(R.id.area);
+        final TextView price = findViewById(R.id.price);
+        status.setText(selectedSolar.status.toUpperCase(Locale.ROOT));
+        area.setText(String.format("%d m2",selectedSolar.area));
+        price.setText(String.format("%d U$S",selectedSolar.price));
+    }
 }
