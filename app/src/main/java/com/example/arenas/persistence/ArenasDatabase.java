@@ -40,7 +40,5 @@ public abstract class ArenasDatabase extends RoomDatabase {
         newPrice.solarId = solar.id;
         priceDAO().insertPrecio(newPrice);
         solarDAO().updateSolar(solar);
-
-
     }
 }

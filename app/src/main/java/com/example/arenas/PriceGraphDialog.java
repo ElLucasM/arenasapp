@@ -21,6 +21,7 @@ import com.jjoe64.graphview.LabelFormatter;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.PointsGraphSeries;
 import com.jjoe64.graphview.series.Series;
 
 import java.sql.Date;
@@ -40,6 +41,8 @@ public abstract class PriceGraphDialog {
         final View priceGraphPopupView =  activity.getLayoutInflater().inflate(R.layout.price_graph_layout, null);
         priceEvolutionLabel = priceGraphPopupView.findViewById(R.id.priceEvolutionLabel);
         priceEvolution = priceGraphPopupView.findViewById(R.id.priceEvolution);
+        priceEvolutionLabel = priceGraphPopupView.findViewById(R.id.priceEvolutionLabel);
+        priceEvolutionLabel.setText("Evolución de precio de Solar #" + solar.id);
         DataPoint[] dataPoints = new DataPoint[prices.size()];
         for(int i = 0; i<dataPoints.length; i++){
             Price price = prices.get(i);
@@ -55,7 +58,11 @@ public abstract class PriceGraphDialog {
             });
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(dataPoints);
+        PointsGraphSeries<DataPoint> pointSeries = new PointsGraphSeries<DataPoint>(dataPoints);
+        pointSeries.setSize(10);
         priceEvolution.addSeries(series);
+        priceEvolution.addSeries(pointSeries);
+        priceEvolution.getViewport().setScalable(true);
         dialogBuilder.setView(priceGraphPopupView);
         alertDialog = dialogBuilder.create();
         alertDialog.show();

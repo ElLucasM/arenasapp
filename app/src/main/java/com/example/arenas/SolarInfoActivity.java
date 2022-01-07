@@ -24,6 +24,7 @@ import com.example.arenas.entities.Solar;
 import com.example.arenas.entities.SolarPrice;
 import com.example.arenas.persistence.ArenasDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
@@ -250,9 +251,27 @@ public class SolarInfoActivity extends AppCompatActivity {
         final TextView status = findViewById(R.id.status);
         final TextView area = findViewById(R.id.area);
         final TextView price = findViewById(R.id.price);
+        final TextView clientsName = findViewById(R.id.clientsName);
+        final TextView phone = findViewById(R.id.phone);
+        final TextView date = findViewById(R.id.date);
         status.setText(selectedSolar.status.toUpperCase(Locale.ROOT));
-        area.setText(String.format("%d m2",selectedSolar.area));
+        area.setText(String.format("%f m2",selectedSolar.area));
         price.setText(String.format("%d U$S",selectedSolar.price));
-        solarPrices = db.solarDAO().getPrices(selectedSolar.id);  
+        solarPrices = db.solarDAO().getPrices(selectedSolar.id);
+        if(selectedSolar.clientName != null) {
+            clientsName.setText(selectedSolar.clientName);
+        } else {
+            clientsName.setText("N/A");
+        }
+        if(selectedSolar.clientPhone != null) {
+            phone.setText(selectedSolar.clientPhone);
+        } else {
+            phone.setText("N/A");
+        }
+        if(selectedSolar.buyDate != null) {
+            date.setText(new SimpleDateFormat("DD/MM/yyyy").format(selectedSolar.buyDate));
+        } else {
+            date.setText("N/A");
+        }
     }
 }

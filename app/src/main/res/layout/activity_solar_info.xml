@@ -169,10 +169,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:layout_marginEnd="8dp"
             android:text="Fecha:"
             android:textAlignment="viewEnd"
-            app:layout_constraintEnd_toStartOf="@+id/date"
+            app:layout_constraintEnd_toEndOf="@+id/clientPhoneLabel"
             app:layout_constraintTop_toBottomOf="@+id/clientNameLabel2" />
 
         <TextView
@@ -183,11 +182,11 @@
             android:text="phone"
             android:textAlignment="viewStart"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/clientsName2"
-            app:layout_constraintTop_toBottomOf="@+id/clientsName2" />
+            app:layout_constraintStart_toStartOf="@+id/clientsName"
+            app:layout_constraintTop_toBottomOf="@+id/clientsName" />
 
         <TextView
-            android:id="@+id/clientsName2"
+            android:id="@+id/clientsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
