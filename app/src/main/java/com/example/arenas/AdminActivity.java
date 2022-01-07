@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -85,6 +86,17 @@ public class AdminActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            switch(solares.get(finalI).status){
+                case "reservado":
+                    buttons[i].setBackgroundColor(Color.parseColor("#3E1D9C06"));
+                    break;
+                case "comprado":
+                    buttons[i].setBackgroundColor(Color.parseColor("#3E9C0606"));
+                    break;
+                case "construido":
+                    buttons[i].setBackgroundColor(Color.parseColor("#3E061A9C"));
+                    break;
+            }
 
         }
     }
