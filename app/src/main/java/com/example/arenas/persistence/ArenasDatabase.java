@@ -16,7 +16,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
-@Database(entities = {Solar.class, Price.class}, version = 7)
+@Database(entities = {Solar.class, Price.class}, version = 8)
 @TypeConverters({Converters.class})
 public abstract class ArenasDatabase extends RoomDatabase {
     public abstract SolarDAO solarDAO();

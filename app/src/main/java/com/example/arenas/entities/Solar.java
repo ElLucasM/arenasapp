@@ -18,7 +18,7 @@ public class Solar {
     public int price;
 
     @ColumnInfo(name = "area")
-    public int area;
+    public float area;
 
     @ColumnInfo(name = "buy_date")
     public Date buyDate;
@@ -33,7 +33,7 @@ public class Solar {
 
     }
 
-    public Solar(int id, String status, int price, int area){
+    public Solar(int id, String status, int price, float area){
         this.id = id;
         this.status = status;
         this.price = price;

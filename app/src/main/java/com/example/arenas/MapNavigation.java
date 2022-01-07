@@ -94,10 +94,21 @@ public class MapNavigation extends AppCompatActivity {
 
         for (int i = 0;i < buttons.length;i++) {
             String color = "#19000000";
-            if(true) {
-                color = "#19FB0404";
+            String state = "";
+            switch(state){
+                case "libre":
+                    color = "#00000000";
+                case "comprado":
+                    color = "#54FF0000";
+                    break;
+                case "reservado":
+                    color = "#54FFAA00";
+                    break;
+                case "construido":
+                    color = "#540090FF";
+                    break;
             }
-            buttons[i].setForegroundTintList(ColorStateList.valueOf(Color.parseColor(color)));
+            buttons[i].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(color)));
         }
 
         //SET EVENTO

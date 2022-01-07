@@ -37,6 +37,7 @@ public class SolarInfoActivity extends AppCompatActivity {
     private EditText priceField;
     private Button priceAccept;
     private Button priceCancel;
+    private List<SolarPrice> solarPrices;
 
 
     @Override
@@ -46,7 +47,6 @@ public class SolarInfoActivity extends AppCompatActivity {
 
         selectedSolar = AdminActivity.selectedSolar;
         db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
-        List<SolarPrice> solarPrices = db.solarDAO().getPrices(selectedSolar.id);
 
         final TextView solarID = findViewById(R.id.solarID);
         solarID.setText(String.format("Solar #%d", selectedSolar.id));
@@ -182,6 +182,7 @@ public class SolarInfoActivity extends AppCompatActivity {
                 db.newPrice(selectedSolar, Integer.valueOf(priceField.getText().toString()));
                 alertDialog.cancel();
                 dataLoad();
+
             }
         });
 
@@ -252,5 +253,6 @@ public class SolarInfoActivity extends AppCompatActivity {
         status.setText(selectedSolar.status.toUpperCase(Locale.ROOT));
         area.setText(String.format("%d m2",selectedSolar.area));
         price.setText(String.format("%d U$S",selectedSolar.price));
+        solarPrices = db.solarDAO().getPrices(selectedSolar.id);  
     }
 }
