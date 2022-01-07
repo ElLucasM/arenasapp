@@ -203,18 +203,18 @@
 
     <Button
         android:id="@+id/buttonsolar13"
-        android:layout_width="111.3dp"
-        android:layout_height="83dp"
+        android:layout_width="111.9dp"
+        android:layout_height="85dp"
         android:background="@drawable/button13"
-        android:backgroundTint="#19000000"
+        android:backgroundTint="#1A000000"
         android:text="13"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/map"
         app:layout_constraintEnd_toEndOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.9215"
+        app:layout_constraintHorizontal_bias="0.92183"
         app:layout_constraintStart_toStartOf="@+id/map"
         app:layout_constraintTop_toTopOf="@+id/map"
-        app:layout_constraintVertical_bias="0.563"
+        app:layout_constraintVertical_bias="0.566"
         tools:text="13" />
 
     <Button
@@ -462,6 +462,38 @@
             app:layout_constraintVertical_bias="0.17000002" />
 
         <TextView
+            android:id="@+id/solarstatus"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Libre"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.17" />
+
+        <TextView
+            android:id="@+id/solararea"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="510m²"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23" />
+
+        <TextView
             android:id="@+id/solarlabelarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -472,10 +504,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintHorizontal_bias="0.19"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23000002" />
+            app:layout_constraintVertical_bias="0.23" />
 
         <View
             android:id="@+id/view"
@@ -487,6 +519,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.85" />
+
+        <ImageView
+            android:id="@+id/solarareaimage"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:adjustViewBounds="true"
+            android:foregroundGravity="center"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75"
+            app:srcCompat="@drawable/solarareaimg1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.arenas.persistence.ArenasDatabase;
@@ -67,6 +68,9 @@ public class MapNavigation extends AppCompatActivity {
         final ConstraintLayout solarinfo = findViewById(R.id.solarinfo);
 
         final TextView solartitle = findViewById(R.id.solartitle);
+        final TextView solararea = findViewById(R.id.solararea);
+        final TextView solarstatus = findViewById(R.id.solarstatus);
+        final ImageView solarareaimage = findViewById(R.id.solarareaimage);
 
         final Button[] buttons = new Button[22];
         buttons[0] = buttonsolar1;
@@ -94,10 +98,11 @@ public class MapNavigation extends AppCompatActivity {
 
         for (int i = 0;i < buttons.length;i++) {
             String color = "#19000000";
-            String state = "";
+            String state = db.solarDAO().findSolarById(i+1).status;;
             switch(state){
                 case "libre":
                     color = "#00000000";
+                    break;
                 case "comprado":
                     color = "#54FF0000";
                     break;
@@ -130,9 +135,51 @@ public class MapNavigation extends AppCompatActivity {
                     ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 0f);
                     solarInfoAnimation.setDuration(250);
                     solarInfoAnimation.start();
-                    if(finalI==12){
-                        solarPrice.setText(String.format("Precio: %d US$", db.solarDAO().findSolarById(finalI+1).price));
+                    solarPrice.setText(String.format("Precio: %d US$", db.solarDAO().findSolarById(finalI+1).price));
+                    solararea.setText(String.valueOf(db.solarDAO().findSolarById(finalI+1).area) + "m²");
+                    String str = db.solarDAO().findSolarById(finalI+1).status;
+                    String cap = str.substring(0, 1).toUpperCase() + str.substring(1);
+                    solarstatus.setText(cap);
+                    int img = 0;
+                    switch(finalI+1){
+                        case 1:
+                            img = R.drawable.solarareaimg1;
+                            break;
+                        case 2:
+                            img = R.drawable.solarareaimg2;
+                            break;
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                        case 11:
+                        case 15:
+                        case 16:
+                        case 17:
+                        case 18:
+                        case 19:
+                        case 20:
+                        case 21:
+                            img = R.drawable.solarareaimgcommon;
+                            break;
+                        case 12:
+                            img = R.drawable.solarareaimg12;
+                            break;
+                        case 13:
+                            img = R.drawable.solarareaimg13;
+                            break;
+                        case 14:
+                            img = R.drawable.solarareaimg14;
+                            break;
+                        case 22:
+                            img = R.drawable.solarareaimg22;
+                            break;
                     }
+                    solarareaimage.setImageResource(img);
                 }
             });
         }
