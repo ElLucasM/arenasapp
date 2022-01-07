@@ -1,15 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
+    android:background="@color/white"
+    android:padding="2dp"
     android:theme="@style/ThemeOverlay.Arenas.FullscreenContainer"
     tools:context=".AdminActivity">
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="465dp"
-        android:layout_height="143dp"
-        android:text="Solar 13" />
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/solar1"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/solar22"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:text="22" />
+
+                <Button
+                    android:id="@+id/solar21"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="21" />
+
+                <Button
+                    android:id="@+id/solar20"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="20" />
+
+                <Button
+                    android:id="@+id/solar19"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="19" />
+
+                <Button
+                    android:id="@+id/solar18"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="18" />
+
+                <Button
+                    android:id="@+id/solar17"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="17" />
+
+                <Button
+                    android:id="@+id/solar16"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="16" />
+
+                <Button
+                    android:id="@+id/solar15"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:text="15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/solar2"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/solar3"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/solar4"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/solar5"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/solar6"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/solar7"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/solar8"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/solar9"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/solar10"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="10" />
+
+                <Button
+                    android:id="@+id/solar11"
+                    android:layout_width="70dp"
+                    android:layout_height="120dp"
+                    android:text="11" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="1dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/solar14"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="14" />
+
+            <Button
+                android:id="@+id/solar13"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="13" />
+
+            <Button
+                android:id="@+id/solar12"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="12" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

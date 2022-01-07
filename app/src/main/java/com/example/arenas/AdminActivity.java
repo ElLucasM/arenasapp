@@ -11,6 +11,8 @@ import android.widget.Button;
 import com.example.arenas.entities.Solar;
 import com.example.arenas.persistence.ArenasDatabase;
 
+import java.util.List;
+
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -49,14 +51,41 @@ public class AdminActivity extends AppCompatActivity {
         } catch(Exception e) {
             System.out.println(e);
         }
-        final Button test = findViewById(R.id.testButton);
-        Intent i = new Intent(this, SolarInfoActivity.class);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectedSolar = db.solarDAO().findSolarById(13);
-                startActivity(i);
-            }
-        });
+        List<Solar> solares = db.solarDAO().getAllSolares();
+        final Button[] buttons = new Button[22];
+        buttons[0] = findViewById(R.id.solar1);
+        buttons[1] = findViewById(R.id.solar2);
+        buttons[2] = findViewById(R.id.solar3);
+        buttons[3] = findViewById(R.id.solar4);
+        buttons[4] = findViewById(R.id.solar5);
+        buttons[5] = findViewById(R.id.solar6);
+        buttons[6] = findViewById(R.id.solar7);
+        buttons[7] = findViewById(R.id.solar8);
+        buttons[8] = findViewById(R.id.solar9);
+        buttons[9] = findViewById(R.id.solar10);
+        buttons[10] = findViewById(R.id.solar11);
+        buttons[11] = findViewById(R.id.solar12);
+        buttons[12] = findViewById(R.id.solar13);
+        buttons[13] = findViewById(R.id.solar14);
+        buttons[14] = findViewById(R.id.solar15);
+        buttons[15] = findViewById(R.id.solar16);
+        buttons[16] = findViewById(R.id.solar17);
+        buttons[17] = findViewById(R.id.solar18);
+        buttons[18] = findViewById(R.id.solar19);
+        buttons[19] = findViewById(R.id.solar20);
+        buttons[20] = findViewById(R.id.solar21);
+        buttons[21] = findViewById(R.id.solar22);
+        Intent intent = new Intent(this, SolarInfoActivity.class);
+        for(int i = 0; i<22; i++) {
+            int finalI = i;
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    selectedSolar = solares.get(finalI);
+                    startActivity(intent);
+                }
+            });
+
+        }
     }
 }

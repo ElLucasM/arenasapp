@@ -17,6 +17,9 @@ public interface SolarDAO {
     @Query("SELECT * FROM Solar WHERE id=:id")
     Solar findSolarById(int id);
 
+    @Query("SELECT * FROM Solar ORDER BY id asc")
+    List<Solar> getAllSolares();
+
     @Insert
     void insertSolar(Solar solar);
 
