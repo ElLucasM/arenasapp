@@ -24,6 +24,8 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_activity);
 
+
+
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         try {
             db.solarDAO().insertSolar(new Solar(1, "libre", 10000, 802.70f));
@@ -52,7 +54,17 @@ public class AdminActivity extends AppCompatActivity {
         } catch(Exception e) {
             System.out.println(e);
         }
-        List<Solar> solares = db.solarDAO().getAllSolares();
+
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Intent intent = new Intent(this, SolarInfoActivity.class);
         final Button[] buttons = new Button[22];
         buttons[0] = findViewById(R.id.solar1);
         buttons[1] = findViewById(R.id.solar2);
@@ -76,7 +88,10 @@ public class AdminActivity extends AppCompatActivity {
         buttons[19] = findViewById(R.id.solar20);
         buttons[20] = findViewById(R.id.solar21);
         buttons[21] = findViewById(R.id.solar22);
-        Intent intent = new Intent(this, SolarInfoActivity.class);
+
+        ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        List<Solar> solares = db.solarDAO().getAllSolares();
+
         for(int i = 0; i<22; i++) {
             int finalI = i;
             buttons[i].setOnClickListener(new View.OnClickListener() {
@@ -87,14 +102,17 @@ public class AdminActivity extends AppCompatActivity {
                 }
             });
             switch(solares.get(finalI).status){
+                case "libre":
+                    buttons[i].setBackgroundColor(Color.parseColor("#54000000"));
+                    break;
                 case "reservado":
-                    buttons[i].setBackgroundColor(Color.parseColor("#3E1D9C06"));
+                    buttons[i].setBackgroundColor(Color.parseColor("#54FFAA00"));
                     break;
                 case "comprado":
-                    buttons[i].setBackgroundColor(Color.parseColor("#3E9C0606"));
+                    buttons[i].setBackgroundColor(Color.parseColor("#54FF0000"));
                     break;
                 case "construido":
-                    buttons[i].setBackgroundColor(Color.parseColor("#3E061A9C"));
+                    buttons[i].setBackgroundColor(Color.parseColor("#540090FF"));
                     break;
             }
 

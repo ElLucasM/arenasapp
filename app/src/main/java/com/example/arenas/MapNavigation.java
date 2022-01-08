@@ -64,6 +64,10 @@ public class MapNavigation extends AppCompatActivity {
         final Button buttonsolar22 = findViewById(R.id.buttonsolar22);
 
         final FloatingActionButton back = findViewById(R.id.back);
+        final FloatingActionButton interestpointsbutton = findViewById(R.id.interestpointsbutton);
+        final FloatingActionButton contractbutton = findViewById(R.id.contractbutton);
+        final FloatingActionButton photosbutton = findViewById(R.id.photosbutton);
+
 
         final ConstraintLayout solarinfo = findViewById(R.id.solarinfo);
 
@@ -101,24 +105,41 @@ public class MapNavigation extends AppCompatActivity {
             String state = db.solarDAO().findSolarById(i+1).status;;
             switch(state){
                 case "libre":
-                    color = "#00000000";
+                    color = "#1958E40B";
                     break;
                 case "comprado":
-                    color = "#54FF0000";
+                    color = "#33FF0000";
                     break;
                 case "reservado":
-                    color = "#54FFAA00";
+                    color = "#33FFAA00";
                     break;
                 case "construido":
-                    color = "#540090FF";
+                    color = "#330090FF";
                     break;
             }
             buttons[i].setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(color)));
         }
 
+
+
         //SET EVENTO
         ObjectAnimator fadeInBack = ObjectAnimator.ofFloat(back, "translationX", 0f);
-        fadeInBack.setDuration(250);
+        ObjectAnimator interestpointsFade = ObjectAnimator.ofFloat(interestpointsbutton, "translationY", 0f);
+        ObjectAnimator contractFade = ObjectAnimator.ofFloat(contractbutton, "translationY", 0f);
+        ObjectAnimator photosFade = ObjectAnimator.ofFloat(photosbutton, "translationY", 0f);
+
+        interestpointsFade.setStartDelay(0);
+        interestpointsFade.setDuration(400);
+        contractFade.setStartDelay(150);
+        contractFade.setDuration(400);
+        photosFade.setStartDelay(300);
+        photosFade.setDuration(400);
+        fadeInBack.setStartDelay(450);
+        fadeInBack.setDuration(400);
+
+        interestpointsFade.start();
+        contractFade.start();
+        photosFade.start();
         fadeInBack.start();
         final TextView solarPrice = findViewById(R.id.solarprice);
 
@@ -129,7 +150,29 @@ public class MapNavigation extends AppCompatActivity {
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    moveMap(buttons[finalI], view, back, buttons);
+                    ObjectAnimator interestpointsFadeback = ObjectAnimator.ofFloat(interestpointsbutton, "translationY", 200f);
+                    ObjectAnimator contractFadeback = ObjectAnimator.ofFloat(contractbutton, "translationY", 200f);
+                    ObjectAnimator photosFadeback = ObjectAnimator.ofFloat(photosbutton, "translationY", 200f);
+
+                    interestpointsFadeback.setStartDelay(300);
+                    interestpointsFadeback.setDuration(400);
+                    contractFadeback.setStartDelay(150);
+                    contractFadeback.setDuration(400);
+                    photosFadeback.setStartDelay(0);
+                    photosFadeback.setDuration(400);
+
+                    photosFadeback.start();
+                    contractFadeback.start();
+                    interestpointsFadeback.start();
+
+                    final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
+                    ObjectAnimator priceevolutionbuttonFade = ObjectAnimator.ofFloat(priceevolutionbutton, "translationY", 0f);
+                    priceevolutionbuttonFade.setStartDelay(450);
+                    priceevolutionbuttonFade.setDuration(400);
+                    priceevolutionbuttonFade.start();
+
+
+                    moveMap(buttons[finalI], view, back, buttons, interestpointsFade, contractFade, photosFade);
                     hideButtons(buttons);
                     solartitle.setText("SOLAR N# " + (finalI +1));
                     ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 0f);
@@ -140,6 +183,21 @@ public class MapNavigation extends AppCompatActivity {
                     String str = db.solarDAO().findSolarById(finalI+1).status;
                     String cap = str.substring(0, 1).toUpperCase() + str.substring(1);
                     solarstatus.setText(cap);
+                    switch(str){
+                        case "libre":
+                            solarstatus.setTextColor(Color.parseColor("#78FF3D"));
+                            break;
+                        case "comprado":
+                            solarstatus.setTextColor(Color.parseColor("#FF2929"));
+                            break;
+                        case "reservado":
+                            solarstatus.setTextColor(Color.parseColor("#FFDB29"));
+                            break;
+                        case "construido":
+                            solarstatus.setTextColor(Color.parseColor("#3ABAFF"));
+                            break;
+                    }
+
                     int img = 0;
                     switch(finalI+1){
                         case 1:
@@ -186,11 +244,30 @@ public class MapNavigation extends AppCompatActivity {
 
     }
 
-    private void moveMap(Button button, View view, FloatingActionButton back, Button[] buttons){
+    private void moveMap(Button button, View view, FloatingActionButton back, Button[] buttons, ObjectAnimator interestpointsFade, ObjectAnimator contractFade, ObjectAnimator photosFade){
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 resetMap();
+
+
+                interestpointsFade.setStartDelay(100);
+                interestpointsFade.setDuration(400);
+                contractFade.setStartDelay(250);
+                contractFade.setDuration(400);
+                photosFade.setStartDelay(500);
+                photosFade.setDuration(400);
+
+                interestpointsFade.start();
+                contractFade.start();
+                photosFade.start();
+
+                final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
+                ObjectAnimator priceevolutionbuttonFadeback = ObjectAnimator.ofFloat(priceevolutionbutton, "translationY", 200f);
+                priceevolutionbuttonFadeback.setStartDelay(0);
+                priceevolutionbuttonFadeback.setDuration(400);
+                priceevolutionbuttonFadeback.start();
+
                 showButtons(buttons);
                 final ConstraintLayout solarinfo = findViewById(R.id.solarinfo);
                 ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 350f);
