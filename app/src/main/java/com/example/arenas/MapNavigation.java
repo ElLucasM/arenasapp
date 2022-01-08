@@ -19,12 +19,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.arenas.entities.Price;
+import com.example.arenas.entities.Solar;
 import com.example.arenas.persistence.ArenasDatabase;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MapNavigation extends AppCompatActivity {
+
+    private ArenasDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +38,12 @@ public class MapNavigation extends AppCompatActivity {
         setContentView(R.layout.activity_map_navigation);
         setBackAsBack();
 
+
         //FULL SCREEN
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
 
         //DECLARO BOTON
         final Button buttonsolar1 = findViewById(R.id.buttonsolar1);
@@ -67,7 +73,7 @@ public class MapNavigation extends AppCompatActivity {
         final FloatingActionButton interestpointsbutton = findViewById(R.id.interestpointsbutton);
         final FloatingActionButton contractbutton = findViewById(R.id.contractbutton);
         final FloatingActionButton photosbutton = findViewById(R.id.photosbutton);
-
+        final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
 
         final ConstraintLayout solarinfo = findViewById(R.id.solarinfo);
 
@@ -122,6 +128,7 @@ public class MapNavigation extends AppCompatActivity {
 
 
 
+
         //SET EVENTO
         ObjectAnimator fadeInBack = ObjectAnimator.ofFloat(back, "translationX", 0f);
         ObjectAnimator interestpointsFade = ObjectAnimator.ofFloat(interestpointsbutton, "translationY", 0f);
@@ -165,12 +172,13 @@ public class MapNavigation extends AppCompatActivity {
                     contractFadeback.start();
                     interestpointsFadeback.start();
 
-                    final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
+
                     ObjectAnimator priceevolutionbuttonFade = ObjectAnimator.ofFloat(priceevolutionbutton, "translationY", 0f);
                     priceevolutionbuttonFade.setStartDelay(450);
                     priceevolutionbuttonFade.setDuration(400);
                     priceevolutionbuttonFade.start();
 
+                    Solar selectedSolar = db.solarDAO().findSolarById(finalI+1);
 
                     moveMap(buttons[finalI], view, back, buttons, interestpointsFade, contractFade, photosFade);
                     hideButtons(buttons);
@@ -178,9 +186,9 @@ public class MapNavigation extends AppCompatActivity {
                     ObjectAnimator solarInfoAnimation = ObjectAnimator.ofFloat(solarinfo, "translationX", 0f);
                     solarInfoAnimation.setDuration(250);
                     solarInfoAnimation.start();
-                    solarPrice.setText(String.format("Precio: %d US$", db.solarDAO().findSolarById(finalI+1).price));
-                    solararea.setText(String.valueOf(db.solarDAO().findSolarById(finalI+1).area) + "m²");
-                    String str = db.solarDAO().findSolarById(finalI+1).status;
+                    solarPrice.setText(String.format("Precio: %d US$", selectedSolar.price));
+                    solararea.setText(String.valueOf(selectedSolar.area) + "m²");
+                    String str = selectedSolar.status;
                     String cap = str.substring(0, 1).toUpperCase() + str.substring(1);
                     solarstatus.setText(cap);
                     switch(str){
@@ -238,6 +246,13 @@ public class MapNavigation extends AppCompatActivity {
                             break;
                     }
                     solarareaimage.setImageResource(img);
+
+                    priceevolutionbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            setPriceEvolutionGraphic(selectedSolar);
+                        }
+                    });
                 }
             });
         }
@@ -335,6 +350,12 @@ public class MapNavigation extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    private void setPriceEvolutionGraphic(Solar solar){
+        List<Price> prices;
+        prices = db.solarDAO().getPrices(solar.id).get(0).prices;
+        PriceGraphDialog.showPriceGraph(this, this,solar,prices);
     }
 
     private void hideButtons(Button[] buttons) {

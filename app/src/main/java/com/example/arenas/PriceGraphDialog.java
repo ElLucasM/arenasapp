@@ -41,7 +41,6 @@ public abstract class PriceGraphDialog {
         final View priceGraphPopupView =  activity.getLayoutInflater().inflate(R.layout.price_graph_layout, null);
         priceEvolutionLabel = priceGraphPopupView.findViewById(R.id.priceEvolutionLabel);
         priceEvolution = priceGraphPopupView.findViewById(R.id.priceEvolution);
-        priceEvolutionLabel = priceGraphPopupView.findViewById(R.id.priceEvolutionLabel);
         priceEvolutionLabel.setText("Evolución de precio de Solar #" + solar.id);
         DataPoint[] dataPoints = new DataPoint[prices.size()];
         for(int i = 0; i<dataPoints.length; i++){
