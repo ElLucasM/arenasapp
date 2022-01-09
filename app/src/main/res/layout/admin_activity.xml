@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="1.5dp"
     android:background="@color/white"
     android:padding="3dp"
     android:theme="@style/ThemeOverlay.Arenas.FullscreenContainer"
@@ -24,139 +25,193 @@
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="3dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
-                android:orientation="horizontal"
-                android:padding="3dp">
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/solar1"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="1.5dp"
                     android:layout_weight="1"
-                    android:text="1" />
+                    android:padding="1dp"
+                    android:text="1"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar22"
-                    android:layout_width="140dp"
-                    android:layout_height="120dp"
-                    android:text="22" />
+                    android:layout_width="143dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="22"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar21"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="21" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="21"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar20"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="20" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="20"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar19"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="19" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="19"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar18"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="18" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="18"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar17"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="17" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="17"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar16"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="16" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="16"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar15"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:text="15" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="15"
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="3dp">
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/solar2"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
+                    android:layout_margin="1.5dp"
                     android:layout_weight="1"
-                    android:text="2" />
+                    android:padding="1dp"
+                    android:text="2"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar3"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
+                    android:layout_margin="1.5dp"
                     android:layout_weight="1"
-                    android:text="3" />
+                    android:padding="1dp"
+                    android:text="3"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar4"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
+                    android:layout_margin="1.5dp"
                     android:layout_weight="1"
-                    android:text="4" />
+                    android:padding="1dp"
+                    android:text="4"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar5"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="5" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="5"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar6"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="6" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="6"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar7"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="7" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="7"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar8"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="8" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="8"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar9"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="9" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="9"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar10"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="10" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="10"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/solar11"
                     android:layout_width="70dp"
                     android:layout_height="120dp"
-                    android:text="11" />
+                    android:layout_margin="1.5dp"
+                    android:padding="1dp"
+                    android:text="11"
+                    android:textSize="24sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -164,30 +219,34 @@
         <LinearLayout
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
-            android:orientation="vertical"
-            android:padding="3dp">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/solar14"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_margin="1.5dp"
                 android:padding="3dp"
-                android:text="14" />
+                android:text="14"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/solar13"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_margin="1.5dp"
                 android:padding="3dp"
-                android:text="13" />
+                android:text="13"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/solar12"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_margin="1.5dp"
                 android:padding="3dp"
-                android:text="12" />
+                android:text="12"
+                android:textSize="24sp" />
         </LinearLayout>
     </LinearLayout>
 
