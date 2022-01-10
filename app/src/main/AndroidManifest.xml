@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ImageGallery"
+            android:exported="false" />
+        <activity
             android:name=".SolarInfoActivity"
             android:exported="false" />
         <activity

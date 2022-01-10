@@ -27,8 +27,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MapNavigation extends AppCompatActivity {
 
+    boolean interespointclicked = false;
     private ArenasDatabase db;
 
     @Override
@@ -149,38 +152,25 @@ public class MapNavigation extends AppCompatActivity {
         final TextView solarPrice = findViewById(R.id.solarprice);
 
         interestpointsbutton.setOnClickListener(new View.OnClickListener() {
-            boolean interespointclicked = false;
+
             final FloatingActionButton bigbeachbutton = findViewById(R.id.bigbeachbutton);
             final FloatingActionButton beachbutton = findViewById(R.id.beachbutton);
             final FloatingActionButton boatbutton = findViewById(R.id.boatsbutton);
             final FloatingActionButton avenuebutton = findViewById(R.id.avenuebutton);
 
+            @Override
+            public void onClick(View view) {
+                showHideInterests();
 
+            }
+
+        });
+        Intent imageviewerIntent = new Intent(this, ImageGallery.class);
+        photosbutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                showHideInterests(interespointclicked);
-                if(!interespointclicked){
-                    beachbutton.setVisibility(View.VISIBLE);
-                    bigbeachbutton.setVisibility(View.VISIBLE);
-                    boatbutton.setVisibility(View.VISIBLE);
-                    avenuebutton.setVisibility(View.VISIBLE);
-                    interespointclicked = true;
-                } else {
-                    interespointclicked = false;
-                    final Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            beachbutton.setVisibility(View.GONE);
-                            bigbeachbutton.setVisibility(View.GONE);
-                            boatbutton.setVisibility(View.GONE);
-                            avenuebutton.setVisibility(View.GONE);
-
-                        }
-                    }, 250);
-                }
-
+                startActivity(imageviewerIntent);
             }
 
         });
@@ -206,6 +196,8 @@ public class MapNavigation extends AppCompatActivity {
                     photosFadeback.start();
                     contractFadeback.start();
                     interestpointsFadeback.start();
+
+                    if (interespointclicked) showHideInterests();
 
                     final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
                     ObjectAnimator priceevolutionbuttonFade = ObjectAnimator.ofFloat(priceevolutionbutton, "translationY", 0f);
@@ -301,11 +293,11 @@ public class MapNavigation extends AppCompatActivity {
                 resetMap();
 
 
-                interestpointsFade.setStartDelay(100);
+                interestpointsFade.setStartDelay(0);
                 interestpointsFade.setDuration(400);
-                contractFade.setStartDelay(250);
+                contractFade.setStartDelay(150);
                 contractFade.setDuration(400);
-                photosFade.setStartDelay(500);
+                photosFade.setStartDelay(300);
                 photosFade.setDuration(400);
 
                 interestpointsFade.start();
@@ -376,7 +368,7 @@ public class MapNavigation extends AppCompatActivity {
         zoomInTerreno0.start();
     }
 
-    private void showHideInterests(Boolean clicked) {
+    private void showHideInterests() {
         final FloatingActionButton bigbeachbutton = findViewById(R.id.bigbeachbutton);
         final FloatingActionButton beachbutton = findViewById(R.id.beachbutton);
         final FloatingActionButton boatbutton = findViewById(R.id.boatsbutton);
@@ -397,12 +389,29 @@ public class MapNavigation extends AppCompatActivity {
         boatbuttonHide.setDuration(250);
         ObjectAnimator avenuebuttonHide = ObjectAnimator.ofFloat(avenuebutton, "translationY", 400f);
         avenuebuttonHide.setDuration(250);
-        if (clicked) {
+        if (interespointclicked) {
             bigbeachbuttonHide.start();
             beachbuttonHide.start();
             boatbuttonHide.start();
             avenuebuttonHide.start();
+            interespointclicked = false;
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    beachbutton.setVisibility(View.GONE);
+                    bigbeachbutton.setVisibility(View.GONE);
+                    boatbutton.setVisibility(View.GONE);
+                    avenuebutton.setVisibility(View.GONE);
+
+                }
+            }, 250);
         } else {
+            interespointclicked = true;
+            beachbutton.setVisibility(View.VISIBLE);
+            bigbeachbutton.setVisibility(View.VISIBLE);
+            boatbutton.setVisibility(View.VISIBLE);
+            avenuebutton.setVisibility(View.VISIBLE);
             bigbeachbuttonShow.start();
             beachbuttonShow.start();
             boatbuttonShow.start();
