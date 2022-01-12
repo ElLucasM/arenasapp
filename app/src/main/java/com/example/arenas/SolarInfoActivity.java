@@ -25,6 +25,8 @@ import com.example.arenas.entities.SolarPrice;
 import com.example.arenas.persistence.ArenasDatabase;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -76,6 +78,14 @@ public class SolarInfoActivity extends AppCompatActivity {
                 PriceGraphDialog.showPriceGraph(SolarInfoActivity.this,SolarInfoActivity.this,selectedSolar, solarPrices.get(0).prices);
             }
         });
+
+        final Button clientMod = findViewById(R.id.clientMod);
+        clientMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clientDialog();
+            }
+        });
     }
 
     private void statusDialog(){
@@ -93,22 +103,27 @@ public class SolarInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 buttonsColor("libre");
                 selectedSolar.status = "libre";
+                selectedSolar.buyDate = null;
             }
         });
 
         reservado.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 buttonsColor("reservado");
                 selectedSolar.status = "reservado";
+                selectedSolar.buyDate = Date.from(Instant.now());
             }
         });
 
         comprado.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 buttonsColor("comprado");
                 selectedSolar.status = "comprado";
+                selectedSolar.buyDate = Date.from(Instant.now());
             }
         });
 
@@ -201,6 +216,41 @@ public class SolarInfoActivity extends AppCompatActivity {
 
     }
 
+    private void clientDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View clientPopupView = getLayoutInflater().inflate(R.layout.client_popup, null);
+        dialogBuilder.setView(clientPopupView);
+
+        final EditText clientsNameText = clientPopupView.findViewById(R.id.clientsNameText);
+        final EditText clientsPhoneText = clientPopupView.findViewById(R.id.clientsPhoneText);
+        final Button acceptClient = clientPopupView.findViewById(R.id.acceptClient);
+        final Button cancelClient = clientPopupView.findViewById(R.id.cancelClient);
+
+        clientsPhoneText.setText(selectedSolar.clientPhone);
+        clientsNameText.setText(selectedSolar.clientName);
+
+        acceptClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    selectedSolar.clientName = clientsNameText.getText().toString();
+                    selectedSolar.clientPhone = clientsPhoneText.getText().toString();
+                    db.solarDAO().updateSolar(selectedSolar);
+                    alertDialog.cancel();
+                    dataLoad();
+            }
+        });
+
+        cancelClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.cancel();
+            }
+        });
+
+        alertDialog = dialogBuilder.create();
+        alertDialog.show();
+    }
+
     private void buttonsColor(String status){
         switch (status){
             case "libre":
@@ -258,12 +308,12 @@ public class SolarInfoActivity extends AppCompatActivity {
         area.setText(String.format("%f m2",selectedSolar.area));
         price.setText(String.format("%d U$S",selectedSolar.price));
         solarPrices = db.solarDAO().getPrices(selectedSolar.id);
-        if(selectedSolar.clientName != null) {
+        if(selectedSolar.clientName != null && !selectedSolar.clientName.equals("")) {
             clientsName.setText(selectedSolar.clientName);
         } else {
             clientsName.setText("N/A");
         }
-        if(selectedSolar.clientPhone != null) {
+        if(selectedSolar.clientPhone != null && !selectedSolar.clientPhone.equals("")) {
             phone.setText(selectedSolar.clientPhone);
         } else {
             phone.setText("N/A");
