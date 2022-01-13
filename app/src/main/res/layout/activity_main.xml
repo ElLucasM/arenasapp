@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <View
-        android:id="@+id/earth"
+        android:id="@+id/beach_map"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:foreground="@drawable/earth"
@@ -27,8 +27,8 @@
         android:layout_height="45dp"
         android:foreground="@drawable/logo"
         android:foregroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/earth"
-        app:layout_constraintEnd_toEndOf="@+id/earth"
+        app:layout_constraintBottom_toBottomOf="@+id/beach_map"
+        app:layout_constraintEnd_toEndOf="@+id/beach_map"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

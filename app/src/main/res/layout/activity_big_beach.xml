@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1"
+    android:background="#FFFFFF"
+    tools:context=".BigBeach">
+
+    <View
+        android:id="@+id/bigbeach_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:foreground="@drawable/bigbeach_map"
+        android:foregroundTint="#00FFFFFF"
+        android:foregroundTintMode="src_over"
+        android:importantForAccessibility="no"
+        android:rotation="-38"
+        android:scaleX="17"
+        android:scaleY="17"
+        android:translationX="2500px"
+        android:translationY="-6300px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/bigbeach_route"
+        android:layout_width="582dp"
+        android:layout_height="495dp"
+        android:importantForAccessibility="no"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722"
+        app:srcCompat="@drawable/bigbeach_route" />
+
+    <View
+        android:id="@+id/bigbeach_start"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:alpha="0"
+        android:foreground="@drawable/start_point"
+        android:foregroundTint="#00FFFFFF"
+        android:foregroundTintMode="src_over"
+        android:importantForAccessibility="no"
+        android:scaleX="0.1"
+        android:scaleY="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.784" />
+
+    <View
+        android:id="@+id/bigbeachbubble"
+        android:layout_width="152.5dp"
+        android:layout_height="64dp"
+        android:alpha="0"
+        android:foreground="@drawable/bigbeachbubble"
+        android:foregroundTint="#00FFFFFF"
+        android:foregroundTintMode="src_over"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <View
+        android:id="@+id/bigbeach_end"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:alpha="0"
+        android:foreground="@drawable/end_point"
+        android:foregroundTint="#00FFFFFF"
+        android:foregroundTintMode="src_over"
+        android:importantForAccessibility="no"
+        android:scaleX="0.1"
+        android:scaleY="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/textBigBeachTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="100dp"
+        android:alpha="0"
+        android:text="PLAYA GRANDE"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bigbeachBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@android:color/black"
+        android:translationX="-150px"
+        app:borderWidth="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abc_vector_test"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

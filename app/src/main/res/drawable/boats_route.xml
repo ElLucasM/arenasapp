@@ -4,27 +4,27 @@
     <aapt:attr name="android:drawable">
         <vector
             android:name="vector"
-            android:width="742dp"
-            android:height="640dp"
-            android:viewportWidth="742"
-            android:viewportHeight="640">
+            android:width="1525dp"
+            android:height="468dp"
+            android:viewportWidth="1525"
+            android:viewportHeight="468">
             <path
-                android:name="path"
-                android:pathData="M 10.599 10.602 L 126.199 117.456 L 96.409 152.913 L 495.819 501.486 L 529.333 454.696 L 732.195 630.035"
+                android:name="path_1"
+                android:pathData="M 1516.141 94.244 L 1492.775 152.15 L 1424.709 167.389 L 1389.152 138.944 L 1240.83 241.55 L 1191.051 233.422 L 1149.399 191.771 L 1013.268 133.864 L 721.703 6.876 L 582.524 222.248 L 372.232 463.018 L 98.953 227.329 L 130.274 186.273 L 10.574 85.101"
                 android:strokeColor="#ff5757"
                 android:strokeWidth="15"
-                android:trimPathEnd="0"
+                android:trimPathStart="0"
                 android:strokeLineCap="round"
                 android:strokeLineJoin="round"/>
         </vector>
     </aapt:attr>
-    <target android:name="path">
+    <target android:name="path_1">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:propertyName="trimPathEnd"
+                android:propertyName="trimPathStart"
                 android:duration="2000"
-                android:valueFrom="0"
-                android:valueTo="1"
+                android:valueFrom="1"
+                android:valueTo="0"
                 android:valueType="floatType"
                 android:interpolator="@android:interpolator/fast_out_slow_in"/>
         </aapt:attr>

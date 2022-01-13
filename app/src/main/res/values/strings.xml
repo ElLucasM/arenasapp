@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">Arenas</string>
     <string name="title_activity_map_navigation">MapNavigation</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_activity_beach">Beach</string>
 </resources>

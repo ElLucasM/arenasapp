@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".Avenue"
+            android:exported="false" />
+        <activity
+            android:name=".Boats"
+            android:exported="false" />
+        <activity
+            android:name=".BigBeach"
+            android:exported="false" />
+        <activity
+            android:name=".Beach"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_beach"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen" />
+        <activity
             android:name=".ImageGallery"
             android:exported="false" />
         <activity

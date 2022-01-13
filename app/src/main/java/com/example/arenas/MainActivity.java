@@ -2,26 +2,17 @@ package com.example.arenas;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.arenas.entities.Price;
-import com.example.arenas.entities.Solar;
-import com.example.arenas.entities.SolarPrice;
-import com.example.arenas.persistence.ArenasDatabase;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        final View earth = findViewById(R.id.earth);
+        final View earth = findViewById(R.id.beach_map);
         final FloatingActionButton admin = findViewById(R.id.admin);
         final ImageView logo = findViewById(R.id.logo);
         Intent i = new Intent(this, MapNavigation.class);

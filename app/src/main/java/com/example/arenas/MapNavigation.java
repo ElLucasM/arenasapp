@@ -35,6 +35,11 @@ public class MapNavigation extends AppCompatActivity {
     private ArenasDatabase db;
 
     @Override
+    public void onBackPressed() {
+        goToMain();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         //obligatorio start
         super.onCreate(savedInstanceState);
@@ -129,7 +134,6 @@ public class MapNavigation extends AppCompatActivity {
         }
 
 
-
         //SET EVENTO
         ObjectAnimator fadeInBack = ObjectAnimator.ofFloat(back, "translationX", 0f);
         ObjectAnimator interestpointsFade = ObjectAnimator.ofFloat(interestpointsbutton, "translationY", 0f);
@@ -151,12 +155,61 @@ public class MapNavigation extends AppCompatActivity {
         fadeInBack.start();
         final TextView solarPrice = findViewById(R.id.solarprice);
 
-        interestpointsbutton.setOnClickListener(new View.OnClickListener() {
+        final FloatingActionButton bigbeachbutton = findViewById(R.id.bigbeachbutton);
+        final FloatingActionButton beachbutton = findViewById(R.id.beachbutton);
+        final FloatingActionButton boatbutton = findViewById(R.id.boatsbutton);
+        final FloatingActionButton avenuebutton = findViewById(R.id.avenuebutton);
+        final FloatingActionButton lakebutton = findViewById(R.id.lakebutton);
 
-            final FloatingActionButton bigbeachbutton = findViewById(R.id.bigbeachbutton);
-            final FloatingActionButton beachbutton = findViewById(R.id.beachbutton);
-            final FloatingActionButton boatbutton = findViewById(R.id.boatsbutton);
-            final FloatingActionButton avenuebutton = findViewById(R.id.avenuebutton);
+        Intent intentBeach = new Intent(this, Beach.class);
+        beachbutton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(intentBeach);
+               }
+           }
+        );
+
+        Intent intentBigBeach = new Intent(this, BigBeach.class);
+        bigbeachbutton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(intentBigBeach);
+               }
+           }
+        );
+
+        Intent intentAvenue = new Intent(this, Avenue.class);
+        avenuebutton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(intentAvenue);
+               }
+           }
+        );
+
+//        Intent intentLake = new Intent(this, Lake.class);
+//        lakebutton.setOnClickListener(new View.OnClickListener() {
+//               @Override
+//               public void onClick(View view) {
+//                   startActivity(intentLake);
+//               }
+//           }
+//        );
+
+        Intent intentBoats = new Intent(this, Boats.class);
+        boatbutton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(intentBoats);
+               }
+           }
+        );
+
+
+
+
+        interestpointsbutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -373,6 +426,7 @@ public class MapNavigation extends AppCompatActivity {
         final FloatingActionButton beachbutton = findViewById(R.id.beachbutton);
         final FloatingActionButton boatbutton = findViewById(R.id.boatsbutton);
         final FloatingActionButton avenuebutton = findViewById(R.id.avenuebutton);
+        final FloatingActionButton lakebutton = findViewById(R.id.lakebutton);
         ObjectAnimator bigbeachbuttonShow = ObjectAnimator.ofFloat(bigbeachbutton, "translationY", 0f);
         bigbeachbuttonShow.setDuration(250);
         ObjectAnimator beachbuttonShow = ObjectAnimator.ofFloat(beachbutton, "translationY", 0f);
@@ -381,6 +435,20 @@ public class MapNavigation extends AppCompatActivity {
         boatbuttonShow.setDuration(250);
         ObjectAnimator avenuebuttonShow = ObjectAnimator.ofFloat(avenuebutton, "translationY", 0f);
         avenuebuttonShow.setDuration(250);
+        ObjectAnimator lakebuttonShow = ObjectAnimator.ofFloat(lakebutton, "translationY", 0f);
+        lakebuttonShow.setDuration(250);
+
+        ObjectAnimator bigbeachbuttonShowAlpha = ObjectAnimator.ofFloat(bigbeachbutton, "Alpha", 1f);
+        bigbeachbuttonShowAlpha.setDuration(250);
+        ObjectAnimator beachbuttonShowAlpha = ObjectAnimator.ofFloat(beachbutton, "Alpha", 1f);
+        beachbuttonShowAlpha.setDuration(250);
+        ObjectAnimator boatbuttonShowAlpha = ObjectAnimator.ofFloat(boatbutton, "Alpha", 1f);
+        boatbuttonShowAlpha.setDuration(250);
+        ObjectAnimator avenuebuttonShowAlpha = ObjectAnimator.ofFloat(avenuebutton, "Alpha", 1f);
+        avenuebuttonShowAlpha.setDuration(250);
+        ObjectAnimator lakebuttonShowAlpha = ObjectAnimator.ofFloat(lakebutton, "Alpha", 1f);
+        lakebuttonShowAlpha.setDuration(250);
+
         ObjectAnimator bigbeachbuttonHide = ObjectAnimator.ofFloat(bigbeachbutton, "translationY", 100f);
         bigbeachbuttonHide.setDuration(250);
         ObjectAnimator beachbuttonHide = ObjectAnimator.ofFloat(beachbutton, "translationY", 200f);
@@ -389,11 +457,31 @@ public class MapNavigation extends AppCompatActivity {
         boatbuttonHide.setDuration(250);
         ObjectAnimator avenuebuttonHide = ObjectAnimator.ofFloat(avenuebutton, "translationY", 400f);
         avenuebuttonHide.setDuration(250);
+        ObjectAnimator lakebuttonHide = ObjectAnimator.ofFloat(lakebutton, "translationY", 400f);
+        lakebuttonHide.setDuration(250);
+
+        ObjectAnimator bigbeachbuttonHideAlpha = ObjectAnimator.ofFloat(bigbeachbutton, "Alpha", 0);
+        bigbeachbuttonHideAlpha.setDuration(250);
+        ObjectAnimator beachbuttonHideAlpha = ObjectAnimator.ofFloat(beachbutton, "Alpha", 0);
+        beachbuttonHideAlpha.setDuration(250);
+        ObjectAnimator boatbuttonHideAlpha = ObjectAnimator.ofFloat(boatbutton, "Alpha", 0);
+        boatbuttonHideAlpha.setDuration(250);
+        ObjectAnimator avenuebuttonHideAlpha = ObjectAnimator.ofFloat(avenuebutton, "Alpha", 0);
+        avenuebuttonHideAlpha.setDuration(250);
+        ObjectAnimator lakebuttonHideAlpha = ObjectAnimator.ofFloat(lakebutton, "Alpha", 0);
+        lakebuttonHideAlpha.setDuration(250);
+
         if (interespointclicked) {
             bigbeachbuttonHide.start();
             beachbuttonHide.start();
             boatbuttonHide.start();
             avenuebuttonHide.start();
+            lakebuttonHide.start();
+            bigbeachbuttonHideAlpha.start();
+            beachbuttonHideAlpha.start();
+            boatbuttonHideAlpha.start();
+            avenuebuttonHideAlpha.start();
+            lakebuttonHideAlpha.start();
             interespointclicked = false;
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -403,6 +491,7 @@ public class MapNavigation extends AppCompatActivity {
                     bigbeachbutton.setVisibility(View.GONE);
                     boatbutton.setVisibility(View.GONE);
                     avenuebutton.setVisibility(View.GONE);
+                    lakebutton.setVisibility(View.GONE);
 
                 }
             }, 250);
@@ -412,10 +501,17 @@ public class MapNavigation extends AppCompatActivity {
             bigbeachbutton.setVisibility(View.VISIBLE);
             boatbutton.setVisibility(View.VISIBLE);
             avenuebutton.setVisibility(View.VISIBLE);
+            lakebutton.setVisibility(View.VISIBLE);
             bigbeachbuttonShow.start();
             beachbuttonShow.start();
             boatbuttonShow.start();
             avenuebuttonShow.start();
+            lakebuttonShow.start();
+            bigbeachbuttonShowAlpha.start();
+            beachbuttonShowAlpha.start();
+            boatbuttonShowAlpha.start();
+            avenuebuttonShowAlpha.start();
+            lakebuttonShowAlpha.start();
         }
     }
 
@@ -428,6 +524,12 @@ public class MapNavigation extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    private void goToMain() {
+        Intent i = new Intent(this, MainActivity.class);
+        final FloatingActionButton back = findViewById(R.id.back);
+        startActivity(i);
     }
 
     private void setPriceEvolutionGraphic(Solar solar){
@@ -458,7 +560,14 @@ public class MapNavigation extends AppCompatActivity {
         fadeOut.setDuration(100);
         fadeOut.setStartDelay(400);
         fadeOut.start();
-        button.setEnabled(true);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                button.setEnabled(true);
+            }
+        }, 500);
+
     }
 
 }
