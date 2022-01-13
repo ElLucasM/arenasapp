@@ -1,17 +1,24 @@
 package com.example.arenas;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.arenas.entities.Price;
 import com.example.arenas.entities.Solar;
 import com.example.arenas.persistence.ArenasDatabase;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.util.Date;
 import java.util.List;
 
 
@@ -19,6 +26,7 @@ public class AdminActivity extends AppCompatActivity {
 
     public static Solar selectedSolar;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,33 +36,34 @@ public class AdminActivity extends AppCompatActivity {
 
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         try {
-            db.solarDAO().insertSolar(new Solar(1, "libre", 10000, 802.70f));
-            db.solarDAO().insertSolar(new Solar(2, "libre", 10000, 584.64f));
-            db.solarDAO().insertSolar(new Solar(3, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(4, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(5, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(6, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(7, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(8, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(9, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(10, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(11, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(12, "libre", 10000, 584.64f));
-            db.solarDAO().insertSolar(new Solar(13, "libre", 10000, 590));
-            db.solarDAO().insertSolar(new Solar(14, "libre", 10000, 584.64f));
-            db.solarDAO().insertSolar(new Solar(15, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(16, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(17, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(18, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(19, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(20, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(21, "libre", 10000, 510));
-            db.solarDAO().insertSolar(new Solar(22, "libre", 10000, 914.95f));
+            db.insertSolar(1, "libre", 10000, 802.70f);
+            db.insertSolar(2, "libre", 10000, 584.64f);
+            db.insertSolar(3, "libre", 10000, 510);
+            db.insertSolar(4, "libre", 10000, 510);
+            db.insertSolar(5, "libre", 10000, 510);
+            db.insertSolar(6, "libre", 10000, 510);
+            db.insertSolar(7, "libre", 10000, 510);
+            db.insertSolar(8, "libre", 10000, 510);
+            db.insertSolar(9, "libre", 10000, 510);
+            db.insertSolar(10, "libre", 10000, 510);
+            db.insertSolar(11, "libre", 10000, 510);
+            db.insertSolar(12, "libre", 10000, 584.64f);
+            db.insertSolar(13, "libre", 10000, 590);
+            db.insertSolar(14, "libre", 10000, 584.64f);
+            db.insertSolar(15, "libre", 10000, 510);
+            db.insertSolar(16, "libre", 10000, 510);
+            db.insertSolar(17, "libre", 10000, 510);
+            db.insertSolar(18, "libre", 10000, 510);
+            db.insertSolar(19, "libre", 10000, 510);
+            db.insertSolar(20, "libre", 10000, 510);
+            db.insertSolar(21, "libre", 10000, 510);
+            db.insertSolar(22, "libre", 10000, 914.95f);
 
         } catch(Exception e) {
             System.out.println(e);
         }
-
+        //Solar solar = db.solarDAO().findSolarById(13);
+        //db.newPrice(solar,14000,Date.from(LocalDate.of(2022,2,1).atStartOfDay().toInstant(ZoneOffset.UTC)));
 
 
 

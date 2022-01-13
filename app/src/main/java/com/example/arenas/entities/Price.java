@@ -9,9 +9,8 @@ import androidx.room.TypeConverter;
 
 import java.util.Date;
 
-@Entity
+@Entity(primaryKeys = {"date", "solarId"})
 public class Price {
-    @PrimaryKey
     @ColumnInfo(name = "date")
     @NonNull
     public Date date;
