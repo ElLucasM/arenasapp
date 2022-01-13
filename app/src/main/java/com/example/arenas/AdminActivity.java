@@ -17,6 +17,7 @@ import com.example.arenas.persistence.ArenasDatabase;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZoneOffset;
 import java.util.Date;
 import java.util.List;
@@ -62,10 +63,6 @@ public class AdminActivity extends AppCompatActivity {
         } catch(Exception e) {
             System.out.println(e);
         }
-        //Solar solar = db.solarDAO().findSolarById(13);
-        //db.newPrice(solar,14000,Date.from(LocalDate.of(2022,2,1).atStartOfDay().toInstant(ZoneOffset.UTC)));
-
-
 
     }
 

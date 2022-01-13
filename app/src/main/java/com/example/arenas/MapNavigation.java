@@ -115,7 +115,8 @@ public class MapNavigation extends AppCompatActivity {
 
         for (int i = 0;i < buttons.length;i++) {
             String color = "#19000000";
-            String state = db.solarDAO().findSolarById(i+1).status;;
+            String state = db.solarDAO().findSolarById(i+1).status;
+            System.out.println(state);
             switch(state){
                 case "libre":
                     color = "#1958E40B";
@@ -188,14 +189,14 @@ public class MapNavigation extends AppCompatActivity {
            }
         );
 
-//        Intent intentLake = new Intent(this, Lake.class);
-//        lakebutton.setOnClickListener(new View.OnClickListener() {
-//               @Override
-//               public void onClick(View view) {
-//                   startActivity(intentLake);
-//               }
-//           }
-//        );
+        Intent intentLake = new Intent(this, Lake.class);
+        lakebutton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(intentLake);
+               }
+           }
+        );
 
         Intent intentBoats = new Intent(this, Boats.class);
         boatbutton.setOnClickListener(new View.OnClickListener() {

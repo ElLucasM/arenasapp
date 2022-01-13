@@ -59,7 +59,7 @@ public abstract class PriceGraphDialog {
         Cartesian cartesian = AnyChart.column();
         for(int i = 0; i<prices.size(); i++){
             Price price = prices.get(i);
-            DateFormat dateFormat = new SimpleDateFormat("MM-yy");
+            DateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
             dataPoints.add(new ValueDataEntry(dateFormat.format(price.date),price.price));
         }
         Column column = cartesian.column(dataPoints);
@@ -78,7 +78,6 @@ public abstract class PriceGraphDialog {
         cartesian.yScale().minimum(0d);
 
         cartesian.yAxis(0).labels().format("${%Value}{groupsSeparator: }");
-        cartesian.xAxis(0).labels().format("${%Value}{groupsSeparator: }");
 
 
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
