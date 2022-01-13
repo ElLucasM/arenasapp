@@ -16,7 +16,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
-@Database(entities = {Solar.class, Price.class}, version = 8)
+@Database(entities = {Solar.class, Price.class}, version = 10)
 @TypeConverters({Converters.class})
 public abstract class ArenasDatabase extends RoomDatabase {
     public abstract SolarDAO solarDAO();
@@ -24,7 +24,7 @@ public abstract class ArenasDatabase extends RoomDatabase {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Transaction
-    public void insertSolar(int id, String status, int price, int area){
+    public void insertSolar(int id, String status, int price, float area){
         Solar solar = new Solar(id, status, price, area);
         Price newPrice = new Price(Date.from(Instant.now()),price);
         newPrice.solarId = id;
@@ -36,6 +36,14 @@ public abstract class ArenasDatabase extends RoomDatabase {
     @Transaction
     public void newPrice(Solar solar, int price){
         Price newPrice = new Price(Date.from(Instant.now()),price);
+        solar.price = newPrice.price;
+        newPrice.solarId = solar.id;
+        priceDAO().insertPrecio(newPrice);
+        solarDAO().updateSolar(solar);
+    }
+
+    public void newPrice(Solar solar, int price, Date date){
+        Price newPrice = new Price(date,price);
         solar.price = newPrice.price;
         newPrice.solarId = solar.id;
         priceDAO().insertPrecio(newPrice);
