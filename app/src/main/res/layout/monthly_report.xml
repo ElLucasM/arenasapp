@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/solarBrackgroundLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/solar_layout_report" />
+
+    <TextView
+        android:id="@+id/solarRepState21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si21"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/si21"
+        app:layout_constraintTop_toBottomOf="@id/si21" />
+
+    <TextView
+        android:id="@+id/solarPriceRep21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState21"
+        app:layout_constraintStart_toStartOf="@id/solarRepState21"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState21" />
+
+    <TextView
+        android:id="@+id/solarPriceRep20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState20"
+        app:layout_constraintStart_toStartOf="@id/solarRepState20"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState20" />
+
+    <TextView
+        android:id="@+id/solarRepState20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si20"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/si20"
+        app:layout_constraintTop_toBottomOf="@id/si20" />
+
+    <TextView
+        android:id="@+id/solarPriceRep19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState19"
+        app:layout_constraintStart_toStartOf="@id/solarRepState19"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState19" />
+
+    <TextView
+        android:id="@+id/solarRepState19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si19"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/si19"
+        app:layout_constraintTop_toBottomOf="@id/si19" />
+
+    <TextView
+        android:id="@+id/solarRepState18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si18"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/si18"
+        app:layout_constraintTop_toBottomOf="@id/si18" />
+
+    <TextView
+        android:id="@+id/solarPriceRep18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState18"
+        app:layout_constraintStart_toStartOf="@id/solarRepState18"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState18" />
+
+    <TextView
+        android:id="@+id/solarPriceRep17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState17"
+        app:layout_constraintStart_toStartOf="@id/solarRepState17"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState17" />
+
+    <TextView
+        android:id="@+id/solarRepState17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si17"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="@+id/si17"
+        app:layout_constraintTop_toBottomOf="@id/si17" />
+
+    <TextView
+        android:id="@+id/solarRepState16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si16"
+        app:layout_constraintStart_toStartOf="@+id/si16"
+        app:layout_constraintTop_toBottomOf="@id/si16" />
+
+    <TextView
+        android:id="@+id/solarPriceRep16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/solarRepState16"
+        app:layout_constraintStart_toStartOf="@id/solarRepState16"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState16" />
+
+    <TextView
+        android:id="@+id/solarPriceRep15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState15"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState15"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState15" />
+
+    <TextView
+        android:id="@+id/solarRepState15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si15"
+        app:layout_constraintStart_toStartOf="@+id/si15"
+        app:layout_constraintTop_toBottomOf="@+id/si15" />
+
+    <TextView
+        android:id="@+id/solarRepState14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si14"
+        app:layout_constraintStart_toStartOf="@+id/si14"
+        app:layout_constraintTop_toBottomOf="@+id/si14" />
+
+    <TextView
+        android:id="@+id/solarPriceRep14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState14"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState14"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState14" />
+
+    <TextView
+        android:id="@+id/solarPriceRep13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState13"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState13"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState13" />
+
+    <TextView
+        android:id="@+id/solarRepState13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si13"
+        app:layout_constraintStart_toStartOf="@+id/si13"
+        app:layout_constraintTop_toBottomOf="@+id/si13" />
+
+    <TextView
+        android:id="@+id/solarRepState12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si12"
+        app:layout_constraintStart_toStartOf="@+id/si12"
+        app:layout_constraintTop_toBottomOf="@+id/si12" />
+
+    <TextView
+        android:id="@+id/solarPriceRep12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState12"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState12"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState12" />
+
+    <TextView
+        android:id="@+id/solarPriceRep11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState11"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState11"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState6" />
+
+    <TextView
+        android:id="@+id/solarRepState11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si11"
+        app:layout_constraintStart_toStartOf="@+id/si11"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarRepState10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si10"
+        app:layout_constraintStart_toStartOf="@+id/si10"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarPriceRep10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState10"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState10"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState6" />
+
+    <TextView
+        android:id="@+id/solarRepState9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si9"
+        app:layout_constraintStart_toStartOf="@+id/si9"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarPriceRep9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState9"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState9"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState6" />
+
+    <TextView
+        android:id="@+id/solarRepState7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si7"
+        app:layout_constraintStart_toStartOf="@+id/si7"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarPriceRep7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState7"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState7"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState6" />
+
+    <TextView
+        android:id="@+id/solarPriceRep6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState6"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState6"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState6" />
+
+    <TextView
+        android:id="@+id/solarRepState6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si6"
+        app:layout_constraintStart_toStartOf="@+id/si6"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarPriceRep5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState5"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState5"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState5" />
+
+    <TextView
+        android:id="@+id/solarRepState5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si5"
+        app:layout_constraintStart_toStartOf="@+id/si5"
+        app:layout_constraintTop_toBottomOf="@+id/si5" />
+
+    <TextView
+        android:id="@+id/solarPriceRep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState4"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState4"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState4" />
+
+    <TextView
+        android:id="@+id/solarRepState4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si4"
+        app:layout_constraintStart_toStartOf="@+id/si4"
+        app:layout_constraintTop_toBottomOf="@+id/si4" />
+
+    <TextView
+        android:id="@+id/solarRepState2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="LIBRE"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState"
+        app:layout_constraintTop_toBottomOf="@+id/si2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/solarPriceRep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$10000"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState2"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState2"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState2" />
+
+    <TextView
+        android:id="@+id/si3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/si12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <TextView
+        android:id="@+id/si13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <TextView
+        android:id="@+id/si14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/si22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <TextView
+        android:id="@+id/si"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467" />
+
+    <TextView
+        android:id="@+id/si2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="@+id/solarBrackgroundLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <TextView
+        android:id="@+id/solarRepState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIBRE"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/si"
+        app:layout_constraintStart_toStartOf="@+id/si"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <TextView
+        android:id="@+id/solarPriceRep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$10000 (0%)"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState" />
+
+    <TextView
+        android:id="@+id/solarRepState22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si22"
+        app:layout_constraintStart_toStartOf="@+id/si22"
+        app:layout_constraintTop_toBottomOf="@+id/si22" />
+
+    <TextView
+        android:id="@+id/solarPriceRep22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXX (+XX%)"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState22"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState22"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState22" />
+
+    <TextView
+        android:id="@+id/solarRepState3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="RESERVADO"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/si3"
+        app:layout_constraintStart_toStartOf="@+id/si3"
+        app:layout_constraintTop_toBottomOf="@+id/si3" />
+
+    <TextView
+        android:id="@+id/solarPriceRep3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="$ XXXXXX"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState3"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState3"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState3" />
+
+    <TextView
+        android:id="@+id/solarRepState8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="COMPRADO"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/si8"
+        app:layout_constraintStart_toStartOf="@+id/si8"
+        app:layout_constraintTop_toBottomOf="@+id/si8" />
+
+    <TextView
+        android:id="@+id/solarPriceRep8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/solarRepState8"
+        app:layout_constraintStart_toStartOf="@+id/solarRepState8"
+        app:layout_constraintTop_toBottomOf="@+id/solarRepState8" />
+</androidx.constraintlayout.widget.ConstraintLayout>
