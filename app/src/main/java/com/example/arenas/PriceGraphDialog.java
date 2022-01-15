@@ -39,6 +39,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +50,7 @@ public abstract class PriceGraphDialog {
     private static TextView priceEvolutionLabel;
     private static AnyChartView priceEvolution;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static void showPriceGraph(Context context, AppCompatActivity activity, Solar solar, List<Price> prices){
         dialogBuilder = new AlertDialog.Builder(context);
         final View priceGraphPopupView =  activity.getLayoutInflater().inflate(R.layout.price_graph_layout, null);
@@ -59,8 +61,7 @@ public abstract class PriceGraphDialog {
         Cartesian cartesian = AnyChart.column();
         for(int i = 0; i<prices.size(); i++){
             Price price = prices.get(i);
-            DateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
-            dataPoints.add(new ValueDataEntry(dateFormat.format(price.date),price.price));
+            dataPoints.add(new ValueDataEntry(price.date.format(DateTimeFormatter.ofPattern("MM/yyyy")),price.price));
         }
         Column column = cartesian.column(dataPoints);
 

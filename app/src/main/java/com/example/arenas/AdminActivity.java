@@ -4,12 +4,15 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.arenas.entities.Price;
 import com.example.arenas.entities.Solar;
@@ -17,8 +20,12 @@ import com.example.arenas.persistence.ArenasDatabase;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.time.ZoneOffset;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +33,7 @@ import java.util.List;
 public class AdminActivity extends AppCompatActivity {
 
     public static Solar selectedSolar;
+    private AlertDialog alertDialog;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -33,8 +41,43 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_activity);
 
+        final Button monthlyRepButton = findViewById(R.id.monthlyRepButton);
+        monthlyRepButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(AdminActivity.this);
+                final View monthChooserView = getLayoutInflater().inflate(R.layout.month_choose_dialog, null);
+                dialogBuilder.setView(monthChooserView);
+
+                Spinner spinner = monthChooserView.findViewById(R.id.spinner);
+                Button go = monthChooserView.findViewById(R.id.go);
+                List<String> months = new ArrayList<>();
+                List<int[]> params = new ArrayList<>();
+
+                for (int i = LocalDate.now().getYear(); i > 2021; i--) {
+                    for (int j = 5; j > 0; j--) {
+                        months.add(String.format("%d/%d", j,i));
+                        params.add(new int[]{j, i});
+                    }
+                }
+                go.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AdminActivity.this ,MonthlyReportActivity.class);
+                        startActivity(intent);
+                        MonthlyReportActivity.month = Month.of(params.get(spinner.getSelectedItemPosition())[0]);
+                        MonthlyReportActivity.year = params.get(spinner.getSelectedItemPosition())[1];
+                    }
+                });
 
 
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(monthChooserView.getContext(), android.R.layout.simple_spinner_item, months);
+                spinner.setAdapter(arrayAdapter);
+
+                alertDialog = dialogBuilder.create();
+                alertDialog.show();
+            }
+        });
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         try {
             db.insertSolar(1, "libre", 10000, 802.70f);
@@ -63,6 +106,11 @@ public class AdminActivity extends AppCompatActivity {
         } catch(Exception e) {
             System.out.println(e);
         }
+
+        //db.newPrice(new Solar(13, "libre", 10000,590),15000, LocalDateTime.of(2022,4,1,0,0));
+        Solar solar = db.solarDAO().findSolarById(13);
+        solar.buyDate = Date.from(Instant.parse("2022-03-10T23:59:59.000Z"));
+        db.solarDAO().updateSolar(solar);
 
     }
 
