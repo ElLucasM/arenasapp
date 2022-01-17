@@ -73,6 +73,7 @@ public class SolarInfoActivity extends AppCompatActivity {
 
         final Button priceEvo = findViewById(R.id.priceEvo);
         priceEvo.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 PriceGraphDialog.showPriceGraph(SolarInfoActivity.this,SolarInfoActivity.this,selectedSolar, solarPrices.get(0).prices);
