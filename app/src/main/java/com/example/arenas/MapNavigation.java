@@ -1,5 +1,6 @@
 package com.example.arenas;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.room.Room;
@@ -113,9 +114,11 @@ public class MapNavigation extends AppCompatActivity {
         buttons[20] = buttonsolar21;
         buttons[21] = buttonsolar22;
 
+        List<Solar> solares = db.solarDAO().getAllSolares();
+        
         for (int i = 0;i < buttons.length;i++) {
             String color = "#19000000";
-            String state = db.solarDAO().findSolarById(i+1).status;
+            String state = solares.get(i).status;
             System.out.println(state);
             switch(state){
                 case "libre":
@@ -533,6 +536,7 @@ public class MapNavigation extends AppCompatActivity {
         startActivity(i);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setPriceEvolutionGraphic(Solar solar){
         List<Price> prices;
         prices = db.solarDAO().getPrices(solar.id).get(0).prices;

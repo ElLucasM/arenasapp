@@ -52,6 +52,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MonthlyReportActivity" />
+        <activity android:name=".RunningStateActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen"/>
     </application>
 
 </manifest>
