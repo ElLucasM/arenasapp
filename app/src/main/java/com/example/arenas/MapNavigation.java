@@ -332,6 +332,7 @@ public class MapNavigation extends AppCompatActivity {
                     solarareaimage.setImageResource(img);
 
                     priceevolutionbutton.setOnClickListener(new View.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.O)
                         @Override
                         public void onClick(View view) {
                             setPriceEvolutionGraphic(selectedSolar);

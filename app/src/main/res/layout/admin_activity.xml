@@ -265,10 +265,18 @@
         android:id="@+id/monthlyRepButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reporte mensual"
+        android:text="Reporte histórico"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <Button
+        android:id="@+id/running_state_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REPORTE MENSUAL"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/monthlyRepButton"
+        app:layout_constraintTop_toTopOf="@+id/monthlyRepButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

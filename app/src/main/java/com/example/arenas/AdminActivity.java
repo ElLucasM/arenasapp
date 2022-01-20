@@ -63,12 +63,10 @@ public class AdminActivity extends AppCompatActivity {
                 go.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //Intent intent = new Intent(AdminActivity.this ,MonthlyReportActivity.class);
-                        //startActivity(intent);
-                        //MonthlyReportActivity.month = Month.of(params.get(spinner.getSelectedItemPosition())[0]);
-                        //MonthlyReportActivity.year = params.get(spinner.getSelectedItemPosition())[1];
-                        Intent intent = new Intent(AdminActivity.this ,RunningStateActivity.class);
+                        Intent intent = new Intent(AdminActivity.this ,MonthlyReportActivity.class);
                         startActivity(intent);
+                        MonthlyReportActivity.month = Month.of(params.get(spinner.getSelectedItemPosition())[0]);
+                        MonthlyReportActivity.year = params.get(spinner.getSelectedItemPosition())[1];
                     }
                 });
 
@@ -78,6 +76,15 @@ public class AdminActivity extends AppCompatActivity {
 
                 alertDialog = dialogBuilder.create();
                 alertDialog.show();
+            }
+        });
+
+        final Button runningStateButton = findViewById(R.id.running_state_button);
+        runningStateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this ,RunningStateActivity.class);
+                startActivity(intent);
             }
         });
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
