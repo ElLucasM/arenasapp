@@ -1,5 +1,6 @@
 package com.example.arenas;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.room.Room;
@@ -251,6 +252,9 @@ public class MapNavigation extends AppCompatActivity {
                     contractFadeback.start();
                     interestpointsFadeback.start();
 
+                    final TextView padron = findViewById(R.id.solarpadron);
+                    padron.setText((772+finalI)+"");
+
                     if (interespointclicked) showHideInterests();
 
                     final FloatingActionButton priceevolutionbutton = findViewById(R.id.priceevolutionbutton);
@@ -329,6 +333,7 @@ public class MapNavigation extends AppCompatActivity {
                     solarareaimage.setImageResource(img);
 
                     priceevolutionbutton.setOnClickListener(new View.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.O)
                         @Override
                         public void onClick(View view) {
                             setPriceEvolutionGraphic(selectedSolar);
@@ -533,6 +538,7 @@ public class MapNavigation extends AppCompatActivity {
         startActivity(i);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setPriceEvolutionGraphic(Solar solar){
         List<Price> prices;
         prices = db.solarDAO().getPrices(solar.id).get(0).prices;
