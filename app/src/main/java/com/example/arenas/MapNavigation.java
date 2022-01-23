@@ -114,9 +114,11 @@ public class MapNavigation extends AppCompatActivity {
         buttons[20] = buttonsolar21;
         buttons[21] = buttonsolar22;
 
+        List<Solar> solares = db.solarDAO().getAllSolares();
+        
         for (int i = 0;i < buttons.length;i++) {
             String color = "#19000000";
-            String state = db.solarDAO().findSolarById(i+1).status;
+            String state = solares.get(i).status;
             System.out.println(state);
             switch(state){
                 case "libre":

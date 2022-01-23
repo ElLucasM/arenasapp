@@ -78,30 +78,39 @@ public class AdminActivity extends AppCompatActivity {
                 alertDialog.show();
             }
         });
+
+        final Button runningStateButton = findViewById(R.id.running_state_button);
+        runningStateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this ,RunningStateActivity.class);
+                startActivity(intent);
+            }
+        });
         ArenasDatabase db = Room.databaseBuilder(getApplicationContext(),ArenasDatabase.class, "arenasdb").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         try {
-            db.insertSolar(1, "libre", 10000, 802.70f);
-            db.insertSolar(2, "libre", 10000, 584.64f);
-            db.insertSolar(3, "libre", 10000, 510);
-            db.insertSolar(4, "libre", 10000, 510);
-            db.insertSolar(5, "libre", 10000, 510);
-            db.insertSolar(6, "libre", 10000, 510);
-            db.insertSolar(7, "libre", 10000, 510);
-            db.insertSolar(8, "libre", 10000, 510);
-            db.insertSolar(9, "libre", 10000, 510);
-            db.insertSolar(10, "libre", 10000, 510);
-            db.insertSolar(11, "libre", 10000, 510);
-            db.insertSolar(12, "libre", 10000, 584.64f);
-            db.insertSolar(13, "libre", 10000, 590);
-            db.insertSolar(14, "libre", 10000, 584.64f);
-            db.insertSolar(15, "libre", 10000, 510);
-            db.insertSolar(16, "libre", 10000, 510);
-            db.insertSolar(17, "libre", 10000, 510);
-            db.insertSolar(18, "libre", 10000, 510);
-            db.insertSolar(19, "libre", 10000, 510);
-            db.insertSolar(20, "libre", 10000, 510);
-            db.insertSolar(21, "libre", 10000, 510);
-            db.insertSolar(22, "libre", 10000, 914.95f);
+            db.insertSolar(1, "libre", 19649, 802.70f);
+            db.insertSolar(2, "libre", 16060, 584.64f);
+            db.insertSolar(3, "libre", 14025, 510);
+            db.insertSolar(4, "libre", 14025, 510);
+            db.insertSolar(5, "libre", 14025, 510);
+            db.insertSolar(6, "libre", 14025, 510);
+            db.insertSolar(7, "libre", 14025, 510);
+            db.insertSolar(8, "libre", 14025, 510);
+            db.insertSolar(9, "libre", 14025, 510);
+            db.insertSolar(10, "libre", 14025, 510);
+            db.insertSolar(11, "libre", 14025, 510);
+            db.insertSolar(12, "libre", 16060, 584.64f);
+            db.insertSolar(13, "libre", 16225, 590);
+            db.insertSolar(14, "libre", 16060, 584.64f);
+            db.insertSolar(15, "libre", 14025, 510);
+            db.insertSolar(16, "libre", 14025, 510);
+            db.insertSolar(17, "libre", 14025, 510);
+            db.insertSolar(18, "libre",13515, 510);
+            db.insertSolar(19, "libre", 13515, 510);
+            db.insertSolar(20, "libre", 13515, 510);
+            db.insertSolar(21, "libre", 13515, 510);
+            db.insertSolar(22, "libre", 22393, 914.95f);
 
         } catch(Exception e) {
             System.out.println(e);
