@@ -89,7 +89,7 @@ public class RunningStateActivity extends AppCompatActivity {
         
         for(int i = 0; i<22 ;i++){
             Solar solar = solares.get(i);
-            solarPriceTags[i].setText(String.format("Solar %d    $%d",solar.id,solar.price));
+            solarPriceTags[i].setText(String.format("SOLAR %d: %d US$",solar.id,solar.price));
             switch (solar.status){
                 case "libre":
                     color = "#1958E40B";

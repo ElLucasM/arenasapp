@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="#D1A266"
+    android:backgroundTint="#755630"
     android:foregroundGravity="fill_horizontal"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen"
     tools:context=".MapNavigation">
@@ -412,177 +412,199 @@
             android:id="@+id/solarPriceTag1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingTop="8dp"
-            android:text="Solar 1 $XXXXX"
+            android:paddingStart="0dp"
+            android:paddingTop="2dp"
+            android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/solarPriceTag22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
+            android:paddingStart="0dp"
             android:text="TextView"
+            android:textAlignment="center"
             android:textColor="#000000" />
     </LinearLayout>
 
@@ -591,11 +613,122 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DICIEMBRE 2021 | PRELANZAMIENTO"
-        android:textColor="#6D4C41"
-        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#A3F3A0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#F16060"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#60B2F1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#EFCD55"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="LIBRE"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="COMPRADO"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="CONSTRUIDO"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="RESERVADO"
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
