@@ -159,10 +159,10 @@ public class Avenue extends AppCompatActivity {
                 //
 
                 ObjectAnimator mapHideAlpha = ObjectAnimator.ofFloat(avenuemap, "Alpha", 0f);
-                ObjectAnimator mapHideScaleX = ObjectAnimator.ofFloat(avenuemap, "ScaleX", 9.5f);
-                ObjectAnimator mapHideScaleY = ObjectAnimator.ofFloat(avenuemap, "ScaleY", 9.5f);
-                ObjectAnimator mapHideTranslationX = ObjectAnimator.ofFloat(avenuemap, "TranslationX", 2450f);
-                ObjectAnimator mapHideTranslationY = ObjectAnimator.ofFloat(avenuemap, "TranslationY", -1200f);
+                ObjectAnimator mapHideScaleX = ObjectAnimator.ofFloat(avenuemap, "ScaleX", 5.6f);
+                ObjectAnimator mapHideScaleY = ObjectAnimator.ofFloat(avenuemap, "ScaleY", 5.6f);
+                ObjectAnimator mapHideTranslationX = ObjectAnimator.ofFloat(avenuemap, "TranslationX", -250f);
+                ObjectAnimator mapHideTranslationY = ObjectAnimator.ofFloat(avenuemap, "TranslationY", -1050f);
                 ObjectAnimator mapHideRotation = ObjectAnimator.ofFloat(avenuemap, "Rotation", -38f);
 
                 Interpolator linearInterpolator = new LinearInterpolator();

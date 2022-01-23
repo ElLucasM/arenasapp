@@ -4,21 +4,20 @@
     <aapt:attr name="android:drawable">
         <vector
             android:name="vector"
-            android:width="606dp"
-            android:height="976dp"
-            android:viewportWidth="606"
-            android:viewportHeight="976">
+            android:width="621dp"
+            android:height="757dp"
+            android:viewportWidth="621"
+            android:viewportHeight="757">
             <path
-                android:name="path"
-                android:pathData="M 595.648 10.412 L 571.422 46.36 L 571.422 123.725 L 585.488 179.991 L 580.799 194.839 L 571.421 205.779 L 547.195 240.945 L 595.646 275.33 L 563.606 322.218 L 549.216 317.985 L 534.277 306.603 L 511.868 343.595 L 518.282 358.166 L 509.295 372 L 394.495 533.529 L 414.813 553.847 L 312.957 669.913 L 380.374 727.972 L 312.957 840.23 L 199.441 970.978 L 52.525 847.247 L 68.062 825.147 L 10.584 774.201"
+                android:name="path_1"
+                android:pathData="M 611.5 10.412 L 587.274 46.36 L 587.274 123.725 L 601.34 179.991 L 596.651 194.839 L 587.273 205.779 L 563.047 240.945 L 611.498 275.33 L 579.458 322.218 L 565.068 317.985 L 550.129 306.603 L 527.72 343.595 L 534.134 358.166 L 525.147 372 L 410.347 533.529 L 430.665 553.847 L 328.809 669.913 L 246.992 591.923 C 229.02 579.663 209.473 569.889 188.882 562.868 C 154.875 551.312 110.962 545.699 110.962 545.699 L 88.51 660.599 L 10.59 746.443"
                 android:strokeColor="#ff5757"
                 android:strokeWidth="15"
-                android:trimPathStart="0"
                 android:strokeLineCap="round"
                 android:strokeLineJoin="round"/>
         </vector>
     </aapt:attr>
-    <target android:name="path">
+    <target android:name="path_1">
         <aapt:attr name="android:animation">
             <objectAnimator
                 android:propertyName="trimPathStart"

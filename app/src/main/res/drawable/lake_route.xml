@@ -4,16 +4,15 @@
     <aapt:attr name="android:drawable">
         <vector
             android:name="vector"
-            android:width="495dp"
-            android:height="1039dp"
-            android:viewportWidth="495"
-            android:viewportHeight="1039">
+            android:width="506dp"
+            android:height="941dp"
+            android:viewportWidth="506"
+            android:viewportHeight="941">
             <path
                 android:name="path"
-                android:pathData="M 10.252 235.476 L 34.478 249.542 L 99.34 240.942 L 106.373 152.636 L 81.366 60.423 L 93.088 23.694 L 124.347 7.283 L 153.261 14.316 L 189.208 45.575 L 219.685 60.423 L 270.485 68.238 L 361.075 96.009 L 314.187 174.757 L 263.087 322.033 L 173.519 499.967 L 138.052 662.873 L 67.72 834.795 L 202.974 959.229 L 266.694 908.129 L 419.194 1034.12 L 489.502 955.02 L 462.878 931.512"
+                android:pathData="M 10.252 235.476 L 34.478 249.542 L 99.34 240.942 L 106.373 152.636 L 81.366 60.423 L 93.088 23.694 L 124.347 7.283 L 153.261 14.316 L 189.208 45.575 L 219.685 60.423 L 270.485 68.238 L 361.075 96.009 L 314.187 174.757 L 263.087 322.033 L 173.519 499.967 L 137.589 660.267 L 376.631 761.959 L 429.458 780.449 L 499.458 834.796 L 462.883 931.519"
                 android:strokeColor="#ff5757"
                 android:strokeWidth="15"
-                android:trimPathStart="0"
                 android:strokeLineCap="round"
                 android:strokeLineJoin="round"/>
         </vector>

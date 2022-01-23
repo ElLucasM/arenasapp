@@ -17,10 +17,10 @@
         android:foregroundTintMode="src_over"
         android:importantForAccessibility="no"
         android:rotation="-38"
-        android:scaleX="9.5"
-        android:scaleY="9.5"
-        android:translationX="2450px"
-        android:translationY="-1200px"
+        android:scaleX="5.6"
+        android:scaleY="5.6"
+        android:translationX="-250px"
+        android:translationY="-1050px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,16 +30,16 @@
 
     <ImageView
         android:id="@+id/avenue_route"
-        android:layout_width="387dp"
-        android:layout_height="334dp"
+        android:layout_width="372dp"
+        android:layout_height="336dp"
         android:importantForAccessibility="no"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_bias="0.34"
         app:srcCompat="@drawable/avenue_route" />
 
     <View
@@ -55,15 +55,15 @@
         android:scaleY="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintVertical_bias="0.747" />
 
     <View
         android:id="@+id/avenuebubble"
-        android:layout_width="121dp"
-        android:layout_height="67.5dp"
+        android:layout_width="147dp"
+        android:layout_height="67dp"
         android:alpha="0"
         android:foreground="@drawable/avenuebubble"
         android:foregroundTint="#00FFFFFF"
@@ -71,10 +71,10 @@
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.32999998" />
 
     <View
         android:id="@+id/avenue_end"
@@ -89,24 +89,24 @@
         android:scaleY="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <TextView
         android:id="@+id/textAvenueTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="48dp"
         android:alpha="0"
         android:text="BV. SANTA TERESA"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
